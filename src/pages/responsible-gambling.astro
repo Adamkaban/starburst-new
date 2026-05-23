@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+import config from "../../site.config";
+
+const meta = {
+  title:      "Responsible Gambling – Starburst Slots ZA",
+  description: "Responsible gambling resources for South African players — NRGP contacts, self-exclusion tools, deposit limits and the free helpline 0800 006 008.",
+  canonical:  "https://starburstslots.co.za/responsible-gambling/",
+  noindex:    false,
+  ogImage:    "/images/og/starburst-responsible-gambling.webp",
+  ogImageAlt: "Responsible gambling information for South African casino players",
+};
+
+const schema = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Responsible Gambling", path: "/responsible-gambling/" },
+]);
+---
+
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  ogImage={meta.ogImage}
+  ogImageAlt={meta.ogImageAlt}
+  noindex={meta.noindex}
+  schema={schema}
+  ogType="article"
+>
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div style="border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="padding-block: 0.875rem;">
+        <nav aria-label="Breadcrumb" style="font-size: 0.8125rem; color: var(--color-text-dim);">
+          <a href="/" style="color: var(--color-text-muted); text-decoration: none;">Home</a>
+          <span aria-hidden="true" style="margin-inline: 0.5rem; opacity: 0.5;">›</span>
+          <span style="color: var(--color-text);">Responsible Gambling</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container section">
+    <div style="max-width: var(--content-max); margin-inline: auto;">
+
+      <h1 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text); padding-bottom: var(--spacing-xl); border-bottom: 1px solid var(--color-border);">
+        Responsible Gambling
+      </h1>
+      <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--spacing-2xl);">
+        Gambling should be entertaining, not a source of financial stress. This page lists practical resources for South African players who want to manage their gambling or seek support.
+      </p>
+
+      <!-- Helpline callout -->
+      <div
+        style="background: var(--color-bg-card); border: 2px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--spacing-xl); margin-bottom: var(--spacing-2xl); text-align: center;"
+      >
+        <p style="font-size: 1.125rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-sm);">
+          National Responsible Gambling Helpline
+        </p>
+        <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+          0800 006 008
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.875rem;">
+          Free call · Available 24 hours · 7 days a week
+        </p>
+      </div>
+
+      <!-- NRGP -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border); margin-bottom: var(--spacing-2xl);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          National Responsible Gambling Programme (NRGP)
+        </h2>
+        <div style="color: var(--color-text-muted); line-height: 1.8; display: flex; flex-direction: column; gap: var(--spacing-lg);">
+          <p>
+            The NRGP is a South African government-funded programme providing free counselling and support for people affected by gambling-related harm.
+            Services are available in person, by telephone, and online.
+          </p>
+          <p>
+            Website:
+            <a
+              href={config.responsible.nrgpUrl}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              style="color: var(--color-accent);"
+            >
+              www.responsiblegambling.org.za
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Signs of problem gambling -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border); margin-bottom: var(--spacing-2xl);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          Signs of Problem Gambling
+        </h2>
+        <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--spacing-sm); line-height: 1.7;">
+          <li>Spending more than you can afford to lose</li>
+          <li>Borrowing money or selling assets to fund gambling</li>
+          <li>Feeling anxious, irritable, or preoccupied with gambling</li>
+          <li>Chasing losses — increasing bets to recover what was lost</li>
+          <li>Neglecting work, family, or other responsibilities to gamble</li>
+          <li>Lying to family or friends about gambling activity</li>
+          <li>Failed attempts to cut down or stop gambling</li>
+        </ul>
+        <p style="color: var(--color-text-muted); margin-top: var(--spacing-lg); line-height: 1.8;">
+          If you recognise any of these signs in yourself or someone close to you, contact the NRGP helpline: <strong style="color: var(--color-text);">0800 006 008</strong>.
+        </p>
+      </section>
+
+      <!-- Casino tools -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border); margin-bottom: var(--spacing-2xl);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          Responsible Gambling Tools at Casinos
+        </h2>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-lg); line-height: 1.8;">
+          All licensed South African online casinos are required to provide the following tools. Use them proactively, not in crisis.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-lg);">
+            <p style="font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-xs);">Deposit Limits</p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Set daily, weekly, or monthly deposit maximums. Increases require a cooling-off period; reductions apply immediately.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-lg);">
+            <p style="font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-xs);">Session Time Limits</p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Set a maximum time per session. The casino logs you out when the limit is reached.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-lg);">
+            <p style="font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-xs);">Self-Exclusion</p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Block yourself from a casino for a defined period (typically 6 months to 5 years). This is a hard block — you cannot reverse it during the exclusion period.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-lg);">
+            <p style="font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-xs);">Reality Checks</p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem;">Periodic notifications showing how long you have been playing and your net wins or losses for the session.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Age verification -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          Age Restriction
+        </h2>
+        <p style="color: var(--color-text-muted); line-height: 1.8;">
+          Gambling is restricted to persons 18 years and older in South Africa. Licensed casinos are required to verify player age before allowing real-money play.
+          If you have a minor in your household, use parental control software to block access to gambling sites.
+        </p>
+      </section>
+
+    </div>
+    </div>
+  </main>
+</BaseLayout>

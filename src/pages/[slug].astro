@@ -1,0 +1,147 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTABox from "../components/ui/CTABox.astro";
+import CasinoTable from "../components/ui/CasinoTable.astro";
+import FAQSection from "../components/sections/FAQSection.astro";
+import AuthorBox from "../components/ui/AuthorBox.astro";
+import { AFFILIATE_URL, casinos } from "../data/casinos";
+import {
+  buildArticleSchema,
+  buildBreadcrumbs,
+  buildFAQSchema,
+  buildCasinoListSchema,
+} from "../components/seo/SchemaBuilder";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("pages");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const {
+  title,
+  description,
+  publishedDate,
+  lastUpdated,
+  ogImage,
+  ogImageAlt,
+  noindex,
+  schema: schemaType,
+  faqItems,
+} = entry.data;
+
+const pageNames: Record<string, string> = {
+  features:        "Features",
+  "how-to-play":   "How to Play",
+  "rtp-volatility":"RTP & Volatility",
+  bonuses:         "Bonuses",
+  strategy:        "Strategy",
+  mobile:          "Mobile",
+  casinos:         "Casinos",
+  faq:             "FAQ",
+  review:          "Review",
+};
+const pageName = pageNames[entry.slug] ?? entry.slug;
+
+const schemas: object[] = [
+  buildArticleSchema(title, publishedDate, lastUpdated),
+  buildBreadcrumbs([
+    { name: "Home", path: "/" },
+    { name: pageName, path: `/${entry.slug}/` },
+  ]),
+];
+
+if (entry.slug === "casinos") {
+  schemas.push(
+    buildCasinoListSchema(casinos.map((c) => ({ name: c.name, url: AFFILIATE_URL })))
+  );
+}
+
+if (schemaType === "faq" && faqItems?.length) {
+  schemas.push(buildFAQSchema(faqItems));
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
+  noindex={noindex}
+  schema={schemas}
+  ogType="article"
+>
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div style="border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="padding-block: 0.875rem;">
+        <nav aria-label="Breadcrumb" style="font-size: 0.8125rem; color: var(--color-text-dim);">
+          <a href="/" style="color: var(--color-text-muted); text-decoration: none;">Home</a>
+          <span aria-hidden="true" style="margin-inline: 0.5rem; opacity: 0.5;">›</span>
+          <span style="color: var(--color-text);">{pageName}</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Featured image -->
+    {ogImage && (
+      <div class="container" style="padding-top: var(--spacing-xl); max-width: 900px; margin-inline: auto;">
+        <img
+          src={ogImage}
+          width="1200"
+          height="630"
+          alt={ogImageAlt}
+          loading="eager"
+          fetchpriority="high"
+          style="width: 100%; height: auto; border-radius: var(--radius-md); display: block;"
+        />
+      </div>
+    )}
+
+    <!-- Content -->
+    <div class="container section">
+
+      <article class="article-content">
+        <Content />
+      </article>
+
+      {entry.slug === "casinos" && (
+        <section style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+          <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+            Top ZAR Casinos for Starburst
+          </h2>
+          <CasinoTable
+            casinos={casinos}
+            affiliateUrl={AFFILIATE_URL}
+            ctaText="Play Starburst"
+          />
+        </section>
+      )}
+
+      <div style="max-width: var(--content-max); margin-inline: auto;">
+        <CTABox affiliateUrl={AFFILIATE_URL} />
+      </div>
+
+      {schemaType === "faq" && faqItems?.length && (
+        <section style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+          <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+            Frequently Asked Questions
+          </h2>
+          <FAQSection items={faqItems} />
+        </section>
+      )}
+
+      <div style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-2xl); border-top: 1px solid var(--color-border); max-width: var(--content-max); margin-left: auto; margin-right: auto;">
+        <AuthorBox />
+      </div>
+
+    </div>
+
+  </main>
+</BaseLayout>

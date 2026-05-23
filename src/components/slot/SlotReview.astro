@@ -1,0 +1,57 @@
+---
+import CTAButton from "../common/CTAButton.astro";
+
+interface Props {
+  affiliateUrl: string;
+  rtp: string;
+  volatility: string;
+  rating: number;
+  ratingMax?: number;
+}
+
+const { affiliateUrl, rtp, volatility, rating, ratingMax = 5 } = Astro.props;
+---
+
+<section class="py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+
+      <!-- Left: markdown content via slot -->
+      <article class="prose prose-lg max-w-none">
+        <slot />
+      </article>
+
+      <!-- Right: sticky sidebar -->
+      <aside class="lg:sticky lg:top-8 self-start">
+        <div class="bg-[#f5f3ff] rounded-lg p-6 flex flex-col gap-4">
+          <h3 class="font-bold text-lg">Quick Stats</h3>
+
+          <div class="flex justify-between">
+            <span class="text-gray-600">RTP</span>
+            <span class="font-semibold">{rtp}</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-600">Volatility</span>
+            <span class="font-semibold">{volatility}</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-gray-600">Rating</span>
+            <span class="font-semibold">{rating}/{ratingMax}</span>
+          </div>
+
+          <CTAButton
+            href={affiliateUrl}
+            variant="primary"
+            size="lg"
+            text="Play Starburst Now"
+          />
+
+          <p class="text-xs text-gray-500 text-center">18+ | Play Responsibly</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>

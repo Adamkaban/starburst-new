@@ -1,0 +1,43 @@
+---
+import { casinos, AFFILIATE_URL } from '../../data/casinos';
+---
+
+<div style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+    <thead>
+      <tr style="border-bottom: 2px solid var(--color-border);">
+        <th scope="col" style="padding: 0.75rem 1rem; text-align: left; color: var(--color-text-muted); font-weight: 600;">#</th>
+        <th scope="col" style="padding: 0.75rem 1rem; text-align: left; color: var(--color-text-muted); font-weight: 600;">Casino</th>
+        <th scope="col" style="padding: 0.75rem 1rem; text-align: left; color: var(--color-text-muted); font-weight: 600;">Bonus</th>
+        <th scope="col" style="padding: 0.75rem 1rem; text-align: center; color: var(--color-text-muted); font-weight: 600;">ZAR</th>
+        <th scope="col" style="padding: 0.75rem 1rem; text-align: center; color: var(--color-text-muted); font-weight: 600;">Play</th>
+      </tr>
+    </thead>
+    <tbody>
+      {casinos.map((casino, i) => (
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <td style="padding: 0.75rem 1rem; color: var(--color-text-muted);">{i + 1}</td>
+          <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--color-text);">{casino.name}</td>
+          <td style="padding: 0.75rem 1rem; color: var(--color-text-muted);">{casino.bonus}</td>
+          <td style="padding: 0.75rem 1rem; text-align: center; color: var(--color-cta);">✅</td>
+          <td style="padding: 0.75rem 1rem; text-align: center;">
+            <a
+              href={AFFILIATE_URL}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              style="background-color: var(--color-cta); color: #0f0f13; font-weight: 700; padding: 0.375rem 0.875rem; border-radius: var(--radius-full); text-decoration: none; font-size: 0.8125rem; white-space: nowrap; display: inline-block;"
+            >
+              Play Now →
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top: var(--spacing-lg); font-size: 0.875rem; color: var(--color-text-muted);">
+  <a href="/casinos/" style="color: var(--color-accent); text-decoration: underline;">
+    See full casino comparison →
+  </a>
+</p>

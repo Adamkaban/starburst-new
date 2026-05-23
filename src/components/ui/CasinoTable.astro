@@ -1,0 +1,47 @@
+---
+interface Casino {
+  name: string;
+  bonus: string;
+  rating: number;
+  licensed: boolean;
+}
+
+interface Props {
+  casinos: Casino[];
+  affiliateUrl: string;
+  ctaText?: string;
+}
+
+const { casinos, affiliateUrl, ctaText = "Play Now" } = Astro.props;
+---
+
+<div class="casino-table-wrapper" style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th scope="col">Casino</th>
+        <th scope="col">Bonus</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Play</th>
+      </tr>
+    </thead>
+    <tbody>
+      {casinos.map((casino) => (
+        <tr>
+          <td>{casino.name}</td>
+          <td>{casino.bonus}</td>
+          <td>{casino.rating}/5</td>
+          <td>
+            <a
+              href={affiliateUrl}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+            >
+              {ctaText}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

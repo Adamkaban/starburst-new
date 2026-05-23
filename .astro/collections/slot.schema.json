@@ -1,0 +1,242 @@
+{
+  "$ref": "#/definitions/slot",
+  "definitions": {
+    "slot": {
+      "type": "object",
+      "properties": {
+        "slotName": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "slotImage": {
+          "type": "string"
+        },
+        "slotStats": {
+          "type": "object",
+          "properties": {
+            "rtp": {
+              "type": "string"
+            },
+            "volatility": {
+              "type": "string"
+            },
+            "maxWin": {
+              "type": "string"
+            },
+            "reels": {
+              "type": "number"
+            },
+            "paylines": {
+              "type": "number"
+            },
+            "minBet": {
+              "type": "string"
+            },
+            "maxBet": {
+              "type": "string"
+            },
+            "hitFrequency": {
+              "type": "string"
+            },
+            "bonusFeatures": {
+              "type": "string"
+            },
+            "releaseYear": {
+              "type": "number"
+            },
+            "provider": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rtp",
+            "volatility",
+            "maxWin",
+            "reels",
+            "paylines",
+            "minBet",
+            "maxBet",
+            "hitFrequency",
+            "bonusFeatures",
+            "releaseYear",
+            "provider"
+          ],
+          "additionalProperties": false
+        },
+        "pros": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rating": {
+          "type": "number"
+        },
+        "relatedSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "rtp": {
+                "type": "string"
+              },
+              "volatility": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string",
+                "default": ""
+              },
+              "url": {
+                "type": "string",
+                "default": "/"
+              }
+            },
+            "required": [
+              "name",
+              "rtp",
+              "volatility"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "strategyHero": {
+          "type": "string"
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "level": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "suitableFor": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "level",
+              "description",
+              "suitableFor"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "bankroll": {
+          "type": "object",
+          "properties": {
+            "conservative": {
+              "type": "object",
+              "properties": {
+                "budget": {
+                  "type": "string"
+                },
+                "betSize": {
+                  "type": "string"
+                },
+                "stopLoss": {
+                  "type": "string"
+                },
+                "takeProfit": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "budget",
+                "betSize",
+                "stopLoss",
+                "takeProfit"
+              ],
+              "additionalProperties": false
+            },
+            "balanced": {
+              "$ref": "#/definitions/slot/properties/bankroll/properties/conservative"
+            },
+            "aggressive": {
+              "$ref": "#/definitions/slot/properties/bankroll/properties/conservative"
+            }
+          },
+          "required": [
+            "conservative",
+            "balanced",
+            "aggressive"
+          ],
+          "additionalProperties": false
+        },
+        "providerStats": {
+          "type": "object",
+          "properties": {
+            "founded": {
+              "type": "number"
+            },
+            "gamesReleased": {
+              "type": "string"
+            },
+            "licensedMarkets": {
+              "type": "string"
+            },
+            "averageRtp": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "founded",
+            "gamesReleased",
+            "licensedMarkets",
+            "averageRtp"
+          ],
+          "additionalProperties": false
+        },
+        "providerDescription": {
+          "type": "string"
+        },
+        "providerLogo": {
+          "type": "string"
+        },
+        "faq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "question",
+              "answer"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

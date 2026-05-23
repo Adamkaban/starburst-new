@@ -1,0 +1,351 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTABox from "../components/ui/CTABox.astro";
+import { AFFILIATE_URL } from "../data/casinos";
+import { buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+
+const meta = {
+  title:       "Starburst Demo – Starburst Slots ZA",
+  description: "Play Starburst demo free — no registration, no deposit required. Try the slot with virtual credits. South African players welcome. Switch to real ZAR anytime.",
+  canonical:   "https://starburstslots.co.za/demo/",
+  noindex:     false,
+  ogImage:     "/images/og/starburst-demo.webp",
+  ogImageAlt:  "Starburst demo slot — play free, no registration required",
+  schema:      "webpage",
+};
+
+const schema = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Demo", path: "/demo/" },
+]);
+---
+
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  ogImage={meta.ogImage}
+  ogImageAlt={meta.ogImageAlt}
+  noindex={meta.noindex}
+  schema={schema}
+  ogType="article"
+>
+  <main id="main-content">
+
+    <!-- Hero / Intro -->
+    <section style="background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border); padding-block: var(--spacing-2xl);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+          Starburst Demo 2026 — Play Free, No Registration Required
+        </h1>
+        <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8;">
+          If you've never tried the Starburst demo, you're missing one of the most sensible starting points in online slots. NetEnt's cosmic classic has been sitting at the top of casino lobbies since 2012 — and right here you can spin it for free. No deposit, no sign-up, none of the usual friction.
+        </p>
+        <p style="color: var(--color-text-muted); line-height: 1.8;">
+          The demo widget sits just below this intro. Click "Play for Free," wait a second for it to initialise, and your virtual credits are ready. Works the same on desktop or mobile.
+        </p>
+        <div style="margin-top: var(--spacing-xl);">
+          <img
+            src="/images/slots/starburst.webp"
+            width="800"
+            height="450"
+            alt="Starburst slot game by NetEnt — play the free demo, no registration required"
+            loading="eager"
+            fetchpriority="high"
+            style="max-width: 100%; height: auto; border-radius: var(--radius-md); display: block;"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Embed -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 900px; margin-inline: auto;">
+        <div
+          style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;"
+        >
+          <div style="text-align: center; padding: var(--spacing-2xl);">
+            <p style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-md);">
+              Starburst Demo
+            </p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--spacing-xl);">
+              Launch the free demo at a licensed NetEnt casino — no registration required.
+            </p>
+            <a
+              href={AFFILIATE_URL}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              style="background-color: var(--color-cta); color: #0f0f13; font-weight: 700; padding: 0.75rem 2rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
+            >
+              Open Free Demo
+            </a>
+          </div>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-top: var(--spacing-sm);">
+          Demo uses virtual credits. No real money. Switch to real-money play at the casino.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Try the Demo -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Why Try the Starburst Demo First</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8;">
+          <p><strong style="color: var(--color-text);">You learn the mechanics without paying for that education.</strong> Starburst's win-both-ways payline system trips up a lot of newcomers. Wins form left to right and right to left at the same time — knowing that before you wager real ZAR is worth something.</p>
+          <p><strong style="color: var(--color-text);">You figure out whether the volatility suits your style.</strong> Starburst is a low-volatility slot — wins arrive fairly often but lean modest. Some players love that steady rhythm. Others find it flat and prefer chasing bigger swings. The demo tells you which camp you fall into, at zero cost.</p>
+          <p><strong style="color: var(--color-text);">You get a proper feel for the re-spin mechanic.</strong> When the rainbow star expands and locks a reel, triggering a free re-spin, the excitement lands even in demo mode. After you've seen it happen a few times for free, you'll recognise it instantly when real money is on the line.</p>
+          <p><strong style="color: var(--color-text);">It's completely free.</strong> No registration, no deposit, nothing personal required.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- At a Glance Table -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Starburst Demo at a Glance</h2>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: var(--color-text-muted);">
+            <tbody>
+              {[
+                ["Game Provider", "NetEnt"],
+                ["Release Year", "2012"],
+                ["Reels / Rows", "5 reels × 3 rows"],
+                ["Paylines", "10 fixed (pay both ways)"],
+                ["RTP (default)", "96.09%"],
+                ["RTP range", "90.05% – 99.06%"],
+                ["Volatility", "Low"],
+                ["Hit Frequency", "~22.6%"],
+                ["Max Win", "500x stake"],
+                ["Min / Max Bet", "R1.80 – R1,800 (real money)"],
+                ["Mobile Compatible", "Yes — iOS and Android"],
+                ["Registration Needed", "No"],
+                ["Deposit Needed", "No"],
+                ["Jackpot", "None"],
+              ].map(([label, value]) => (
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 0.6rem 0.75rem; font-weight: 600; color: var(--color-text); white-space: nowrap;">{label}</td>
+                  <td style="padding: 0.6rem 0.75rem;">{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Launch -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">How to Launch the Starburst Demo</h2>
+        <ol style="display: flex; flex-direction: column; gap: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8; padding-left: 1.5rem;">
+          <li><strong style="color: var(--color-text);">Find the demo widget.</strong> It sits near the top of this page. You'll see a preview with a "Play for Free" button.</li>
+          <li><strong style="color: var(--color-text);">Click Play for Free.</strong> The game loads directly in your browser. No download, no app. NetEnt built Starburst in HTML5, so it runs in Chrome, Safari, and Firefox on desktop and mobile.</li>
+          <li><strong style="color: var(--color-text);">Set your virtual bet.</strong> Use the controls at the bottom of the game window. Mirror what you'd realistically wager if playing for real — more on why in the tips section.</li>
+          <li><strong style="color: var(--color-text);">Hit Spin or activate Autoplay.</strong> For first-timers, enabling 100 autoplay spins and just watching is useful. The patterns become obvious — how often the Wild appears, how frequently re-spins chain together.</li>
+          <li><strong style="color: var(--color-text);">Top up if your credits run low.</strong> Most demo versions replenish your virtual balance automatically when it hits zero. No hard limit on session length.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- What You'll Experience -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">What You'll Experience in the Demo</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-xl); color: var(--color-text-muted); line-height: 1.8;">
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">The Expanding Starburst Wild</h3>
+            <p>The rainbow star appears only on reels 2, 3, and 4. When it lands, it expands to fill that entire reel and locks in place. The remaining reels re-spin for free.</p>
+            <p style="margin-top: var(--spacing-sm);">Any Starburst Wild landing during a re-spin also expands and triggers another re-spin. You can chain up to three in a row. Multiple expanded wilds covering several reels at once — it does happen, and when you see it in demo mode for the first time you'll understand immediately why players keep coming back.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">Win Both Ways Paylines</h3>
+            <p>Standard slots pay left to right. Starburst pays left to right and right to left across all 10 paylines — effectively doubling your chances on every spin. Watch the win lines light up during the demo. The difference is obvious.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">The Symbol Set</h3>
+            <p>Colourful gemstones — purple amethyst, orange topaz, blue aquamarine, green emerald, yellow diamond — plus a golden bar and a lucky seven. The bar and seven pay higher. The Starburst Wild substitutes for everything, no exceptions.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">The Pace of Play</h3>
+            <p>Starburst is fast. Spins resolve in roughly two seconds with no lengthy bonus sequences interrupting the flow. Run 150 spins in the demo and you'll see exactly what this means — brisk, energetic, never slow.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">RTP in Demo Mode</h3>
+            <p>The Starburst demo always shows the top RTP configuration — 96.09%. In real-money mode, the actual rate depends on the casino, since operators can adjust it within the permitted range. Check the paytable when you switch to real play.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo vs Real Money -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Demo vs Real Money — Honest Comparison</h2>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: var(--color-text-muted);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border);">
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);">Feature</th>
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);">Demo Mode</th>
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);">Real Money Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Cost", "Free", "Real ZAR stakes"],
+                ["Wins", "Virtual credits only", "Real cash paid out"],
+                ["Registration", "Not required", "Required"],
+                ["Deposit", "Not required", "Required"],
+                ["RTP Shown", "Always 96.09%", "Set by casino (may vary)"],
+                ["Bonus Eligibility", "No", "Yes"],
+                ["Starburst Wild Feature", "Yes", "Yes"],
+                ["Re-spin Mechanic", "Yes", "Yes"],
+                ["Mobile Play", "Yes", "Yes"],
+                ["Session Length", "Unlimited", "Limited by bankroll"],
+              ].map(([feature, demo, real]) => (
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 0.6rem 0.75rem; font-weight: 600; color: var(--color-text);">{feature}</td>
+                  <td style="padding: 0.6rem 0.75rem;">{demo}</td>
+                  <td style="padding: 0.6rem 0.75rem;">{real}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: var(--spacing-lg); color: var(--color-text-muted); line-height: 1.8;">
+          The demo is the full game minus real money. Every mechanic, every mathematical model, every animation — identical. What's missing: actual payouts and casino-specific extras that come with a real account.
+        </p>
+      </div>
+    </section>
+
+    <!-- Starburst XXXtreme -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">Starburst XXXtreme Demo — The High-Volatility Version</h2>
+        <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--spacing-xl);">
+          If the standard demo leaves you wanting more edge, NetEnt released a high-volatility variant: Starburst XXXtreme. There's a demo for that one too.
+        </p>
+        <div style="overflow-x: auto; margin-bottom: var(--spacing-lg);">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: var(--color-text-muted);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border);">
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);"></th>
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);">Starburst (Original)</th>
+                <th style="padding: 0.6rem 0.75rem; text-align: left; color: var(--color-text);">Starburst XXXtreme</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Volatility", "Low", "High"],
+                ["RTP", "96.09%", "96.26%"],
+                ["Max Win", "500x", "200,000x"],
+                ["Random Wilds", "No", "Yes"],
+                ["Multipliers", "No", "Up to 150x per Wild"],
+                ["Feature Buy-in", "No", "Yes (XXXtreme Spins)"],
+              ].map(([feature, orig, xxx]) => (
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 0.6rem 0.75rem; font-weight: 600; color: var(--color-text);">{feature}</td>
+                  <td style="padding: 0.6rem 0.75rem;">{orig}</td>
+                  <td style="padding: 0.6rem 0.75rem;">{xxx}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="color: var(--color-text-muted); line-height: 1.8;">
+          XXXtreme introduces Random Wilds that can appear after any spin — one to three Wild symbols on reels 2, 3, and 4, each carrying a random multiplier: ×2, ×3, ×5, ×10, ×25, ×50, ×100, or ×150. Multiple multipliers in the same re-spin stack together. That's where the 200,000x ceiling comes from.
+        </p>
+        <p style="color: var(--color-text-muted); line-height: 1.8; margin-top: var(--spacing-md);">
+          If the classic demo feels a touch tame, XXXtreme is worth a look as a second step. Be honest with yourself about the volatility swing — cold streaks here are long, and they're part of the deal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Tips for Getting the Most Out of the Demo</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8;">
+          <p><strong style="color: var(--color-text);">Match your demo bet to your real-money bet.</strong> If you plan to play at R18 per spin, set the demo to R18. A game that feels comfortable at R1.80 will feel very different at ten times the stake. Practice at realistic bet levels — otherwise your read on the game's volatility is essentially useless.</p>
+          <p><strong style="color: var(--color-text);">Play at least 150 spins before drawing conclusions.</strong> Twenty or thirty spins tell you almost nothing. The RNG needs room to express its mathematical model. 150–200 spins is enough to see the re-spin feature trigger naturally, multiple times, and get a realistic read on win frequency.</p>
+          <p><strong style="color: var(--color-text);">Use Autoplay, but step back while it runs.</strong> Set it to 100 spins and just watch. Removing yourself from decision-making strips away the impulse to stop early after a win. Cleaner data, better conclusions.</p>
+          <p><strong style="color: var(--color-text);">Pay attention to re-spin chains.</strong> Notice how often the Starburst Wild appears — and whether you see two or three consecutive re-spins. Those chains are the primary source of meaningful wins. Understanding how rarely they appear calibrates your expectations for real-money play.</p>
+          <p><strong style="color: var(--color-text);">Read the paytable before you spin a single reel.</strong> One tap on the info button. Knowing what each symbol combination pays — and remembering the game pays both ways — gives you a real framework for what you're seeing.</p>
+          <p><strong style="color: var(--color-text);">Try both the original and XXXtreme demos.</strong> Some SA players love the steady rhythm of the classic. Others find the XXXtreme version's higher ceiling more compelling. Neither is wrong — but the demo is the place to find out which one suits you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <CTABox affiliateUrl={AFFILIATE_URL} ctaText="Play for Real Money" />
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Starburst Demo FAQ</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+          {[
+            {
+              q: "Can I play the Starburst demo without creating an account?",
+              a: "Yes. No registration and no deposit needed. Click the play button and you're in — no email, no password, nothing personal required.",
+            },
+            {
+              q: "Is the demo identical to the real-money version?",
+              a: "The mechanics, graphics, sound, and mathematical model are all identical. What's different: the demo uses virtual credits and you won't be eligible for casino bonuses or real payouts. Everything else — the expanding Wild, the re-spins, the payline structure — works exactly the same way.",
+            },
+            {
+              q: "Does the demo work on mobile in South Africa?",
+              a: "Yes. Built in HTML5, it runs in any modern mobile browser — Chrome on Android, Safari on iPhone, and others. No app needed.",
+            },
+            {
+              q: "What RTP does the demo show?",
+              a: "The demo always defaults to 96.09%. In real-money play, the actual RTP is set by the casino — operators can configure it anywhere from 90.05% to 99.06%.",
+            },
+            {
+              q: "Is there a bonus buy option in the Starburst demo?",
+              a: "Not in the original. The base game has no bonus buy. The Starburst XXXtreme demo includes the XXXtreme Spins purchase — and you can try it freely with virtual credits.",
+            },
+            {
+              q: "Can I win real money playing the demo?",
+              a: "No. Demo play is virtual credits only. Any wins have no cash value. To win real ZAR, you need the real-money version at a licensed casino.",
+            },
+            {
+              q: "How many spins should I play before switching to real money?",
+              a: "A minimum of 150–200 spins at your intended real-money bet level. That's enough to see the re-spin feature trigger naturally and decide whether the game suits you.",
+            },
+            {
+              q: "Does Starburst have a jackpot?",
+              a: "No. The base game has no progressive or fixed jackpot. Maximum payout is 500x your stake. Starburst XXXtreme raises that ceiling to 200,000x — but that's a separate title with a completely different risk profile.",
+            },
+          ].map(({ q, a }) => (
+            <div style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-lg);">
+              <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-sm);">{q}</h3>
+              <p style="color: var(--color-text-muted); line-height: 1.8;">{a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section style="padding-block: var(--spacing-2xl);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <p style="color: var(--color-text-muted); font-size: 0.875rem; line-height: 1.8;">
+          Related pages:
+          <a href="/review/" style="color: var(--color-primary);">Starburst Full Review</a> ·
+          <a href="/rtp-volatility/" style="color: var(--color-primary);">RTP &amp; Volatility Explained</a> ·
+          <a href="/features/" style="color: var(--color-primary);">Starburst Features Guide</a> ·
+          <a href="/bonuses/" style="color: var(--color-primary);">Starburst Bonuses</a> ·
+          <a href="/strategy/" style="color: var(--color-primary);">Strategy Tips</a> ·
+          <a href="/mobile/" style="color: var(--color-primary);">Mobile Play</a> ·
+          <a href="/casinos/" style="color: var(--color-primary);">Best Casinos for SA Players</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

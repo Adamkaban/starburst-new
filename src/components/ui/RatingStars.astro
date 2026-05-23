@@ -1,0 +1,29 @@
+---
+import { Star } from "@lucide/astro";
+
+interface Props {
+  rating: number;
+  ratingMax?: number;
+  size?: number;
+}
+
+const { rating, ratingMax = 5, size = 20 } = Astro.props;
+
+const filled = Math.round(rating);
+const empty = ratingMax - filled;
+---
+
+<div
+  class="rating-stars"
+  role="img"
+  aria-label={`${rating} out of ${ratingMax} stars`}
+  style="display: inline-flex; gap: 2px; align-items: center;"
+>
+  {Array.from({ length: filled }).map(() => (
+    <Star size={size} color="var(--color-primary)" fill="var(--color-primary)" />
+  ))}
+  {Array.from({ length: empty }).map(() => (
+    <Star size={size} color="var(--color-accent)" fill="none" />
+  ))}
+  <span class="sr-only">{rating}/{ratingMax}</span>
+</div>

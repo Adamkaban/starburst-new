@@ -1,0 +1,31 @@
+---
+interface Step {
+  num: number;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol class="space-y-6 list-none">
+  {steps.map((step) => (
+    <li class="flex gap-4 items-start">
+      <span
+        class="text-3xl font-bold leading-none shrink-0"
+        style="color: var(--color-cta);"
+        aria-hidden="true"
+      >
+        {step.num}
+      </span>
+      <div>
+        <p class="font-semibold text-base mb-1">{step.title}</p>
+        <p class="text-sm" style="color: var(--color-text-muted);">{step.description}</p>
+      </div>
+    </li>
+  ))}
+</ol>

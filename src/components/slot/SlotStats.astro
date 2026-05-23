@@ -1,0 +1,61 @@
+---
+interface Props {
+  rtp: string;
+  volatility: string;
+  maxWin: string;
+  reels: number;
+  paylines: number;
+  minBet: string;
+  maxBet: string;
+  hitFrequency: string;
+  bonusFeatures: string;
+  releaseYear: number;
+  provider: string;
+}
+
+const {
+  rtp,
+  volatility,
+  maxWin,
+  reels,
+  paylines,
+  minBet,
+  maxBet,
+  hitFrequency,
+  bonusFeatures,
+  releaseYear,
+  provider,
+} = Astro.props;
+
+const rows: { label: string; value: string }[] = [
+  { label: "RTP",             value: rtp },
+  { label: "Volatility",      value: volatility },
+  { label: "Max Win",         value: maxWin },
+  { label: "Reels",           value: `${reels}×3` },
+  { label: "Paylines",        value: `${paylines} (both ways)` },
+  { label: "Min Bet",         value: minBet },
+  { label: "Max Bet",         value: maxBet },
+  { label: "Hit Frequency",   value: hitFrequency },
+  { label: "Bonus Features",  value: bonusFeatures },
+  { label: "Release Year",    value: String(releaseYear) },
+  { label: "Provider",        value: provider },
+];
+---
+
+<section class="py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">Starburst Slot Statistics</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <tbody>
+          {rows.map((row, index) => (
+            <tr class={`border-b border-gray-200${index % 2 === 0 ? " bg-gray-50" : ""}`}>
+              <th class="py-3 px-4 font-medium text-gray-600 w-1/2">{row.label}</th>
+              <td class="py-3 px-4 font-semibold">{row.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

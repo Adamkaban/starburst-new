@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildAuthorSchema, buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+
+const meta = {
+  title:      "About Johan van der Merwe – Starburst Slots ZA",
+  description: "Johan van der Merwe is a South African casino games reviewer specialising in NetEnt slots. Learn about his methodology and experience testing online slots.",
+  canonical:  "https://starburstslots.co.za/about/",
+  noindex:    false,
+  ogImage:    "/images/og/starburst-about.webp",
+  ogImageAlt: "Johan van der Merwe casino games reviewer South Africa",
+};
+
+const schema = [
+  buildAuthorSchema(),
+  buildBreadcrumbs([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about/" },
+  ]),
+];
+---
+
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  ogImage={meta.ogImage}
+  ogImageAlt={meta.ogImageAlt}
+  noindex={meta.noindex}
+  schema={schema}
+  ogType="article"
+>
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div style="border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="padding-block: 0.875rem;">
+        <nav aria-label="Breadcrumb" style="font-size: 0.8125rem; color: var(--color-text-dim);">
+          <a href="/" style="color: var(--color-text-muted); text-decoration: none;">Home</a>
+          <span aria-hidden="true" style="margin-inline: 0.5rem; opacity: 0.5;">›</span>
+          <span style="color: var(--color-text);">About</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container section">
+    <div style="max-width: var(--content-max); margin-inline: auto;">
+
+      <!-- Author header -->
+      <div
+        style="display: flex; align-items: center; gap: var(--spacing-xl); flex-wrap: wrap; margin-bottom: var(--spacing-2xl);"
+        itemscope
+        itemtype="https://schema.org/Person"
+      >
+        <img
+          src="/images/author.webp"
+          width="120"
+          height="120"
+          alt="Johan van der Merwe"
+          loading="eager"
+          fetchpriority="high"
+          itemprop="image"
+          style="border-radius: 50%; shrink: 0;"
+          class="rounded-full"
+        />
+        <div>
+          <h1 style="font-size: 1.75rem; font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--color-text);" itemprop="name">
+            Johan van der Merwe
+          </h1>
+          <p style="color: var(--color-text-muted); font-size: 1rem;" itemprop="jobTitle">
+            Casino Games Reviewer — South Africa
+          </p>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border); margin-bottom: var(--spacing-2xl);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          About This Site
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-lg); color: var(--color-text-muted); line-height: 1.8;">
+          <p>
+            Starburst Slots ZA provides independent reviews of NetEnt's Starburst slot for South African players.
+            The site covers game mechanics, RTP data, mobile performance, and licensed ZAR casinos — with no sponsored content or undisclosed affiliate arrangements.
+          </p>
+          <p>
+            Johan van der Merwe has been reviewing online casino games with a focus on the South African market since 2018.
+            His reviews test games on actual devices (desktop, Android, and iOS) at real-money stakes before publishing conclusions.
+          </p>
+          <p>
+            All RTP figures cited on this site are sourced from official NetEnt game documentation or verified via certified in-game paytables.
+            Casino ratings are based on licence status, ZAR payment options, welcome bonus wagering requirements, and payout speed.
+          </p>
+        </div>
+      </section>
+
+      <!-- Methodology -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border); margin-bottom: var(--spacing-2xl);">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-text);">
+          Review Methodology
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-lg); color: var(--color-text-muted); line-height: 1.8;">
+          <p>
+            Games are tested in both demo and real-money modes. RTP claims are verified against official developer documentation.
+            Casino recommendations require a valid WCGB or equivalent licence, confirmed ZAR support, and no outstanding unresolved player complaints.
+          </p>
+          <p>
+            Affiliate links on this site use tracking codes. When you click a casino link and make a deposit, this site may receive a commission.
+            This does not affect ratings or recommendations — no casino pays to appear in our comparisons.
+          </p>
+        </div>
+      </section>
+
+      <!-- E-E-A-T signals -->
+      <section style="padding-top: var(--spacing-xl); border-top: 1px solid var(--color-border);">
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-xl);">
+        <h2 style="font-size: 1rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+          Credentials
+        </h2>
+        <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--spacing-sm); line-height: 1.7; font-size: 0.875rem;">
+          <li>Casino game reviewer since 2018, South African market focus</li>
+          <li>Tests games on Android, iOS, and desktop before publishing</li>
+          <li>RTP data sourced from NetEnt official documentation</li>
+          <li>Casino ratings based on verifiable licence, payment, and payout data</li>
+          <li>No sponsored casino placements — all inclusions are editorial</li>
+        </ul>
+      </div>
+      </section>
+
+    </div>
+    </div>
+  </main>
+</BaseLayout>

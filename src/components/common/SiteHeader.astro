@@ -1,0 +1,467 @@
+---
+import config from "../../../site.config";
+import { AFFILIATE_URL } from "../../data/casinos";
+
+const pathname = Astro.url.pathname;
+
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+---
+
+<header
+  class="sticky top-0 z-50 w-full"
+  style="background-color: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);"
+>
+  <div class="container flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 shrink-0 no-underline">
+      <img
+        src={config.brand.logo}
+        width="120"
+        height="40"
+        alt={config.brand.name}
+        loading="eager"
+        class="h-8 w-auto"
+      />
+      <span class="sr-only">{config.brand.name}</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Primary navigation" class="hidden lg:flex items-center gap-1">
+
+      <!-- Starburst home link -->
+      <a
+        href="/"
+        class="nav-brand-link flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold no-underline"
+        aria-label="Starburst Slots — Home"
+        aria-current={isActive("/") ? "page" : undefined}
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+        </svg>
+        Starburst
+      </a>
+
+      <!-- Play dropdown -->
+      <details class="relative group">
+        <summary
+          class="list-none cursor-pointer flex items-center gap-1 px-3 py-2 rounded text-sm font-medium"
+          style="color: var(--color-text);"
+        >
+          Play
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <ul
+          class="absolute top-full left-0 mt-1 min-w-[140px] rounded py-1"
+          style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); list-style: none; padding-left: 0;"
+        >
+          <li>
+            <a
+              href="/demo/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/demo/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Demo</a>
+          </li>
+          <li>
+            <a
+              href="/casinos/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/casinos/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Casinos</a>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Game Guide dropdown -->
+      <details class="relative group">
+        <summary
+          class="list-none cursor-pointer flex items-center gap-1 px-3 py-2 rounded text-sm font-medium"
+          style="color: var(--color-text);"
+        >
+          Game Guide
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <ul
+          class="absolute top-full left-0 mt-1 min-w-[160px] rounded py-1"
+          style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); list-style: none; padding-left: 0;"
+        >
+          <li>
+            <a
+              href="/review/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/review/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Review</a>
+          </li>
+          <li>
+            <a
+              href="/features/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/features/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Features</a>
+          </li>
+          <li>
+            <a
+              href="/how-to-play/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/how-to-play/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >How to Play</a>
+          </li>
+          <li>
+            <a
+              href="/rtp-volatility/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/rtp-volatility/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >RTP &amp; Volatility</a>
+          </li>
+          <li>
+            <a
+              href="/bonuses/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/bonuses/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Bonuses</a>
+          </li>
+          <li>
+            <a
+              href="/strategy/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/strategy/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Strategy</a>
+          </li>
+          <li>
+            <a
+              href="/mobile/"
+              class="block px-4 py-2 text-sm no-underline"
+              style={isActive("/mobile/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+            >Mobile</a>
+          </li>
+        </ul>
+      </details>
+
+      <!-- FAQ direct link -->
+      <a
+        href="/faq/"
+        class="px-3 py-2 rounded text-sm font-medium no-underline"
+        style={isActive("/faq/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+      >FAQ</a>
+
+    </nav>
+
+    <!-- Desktop CTA buttons -->
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="/demo/" class="header-btn-demo no-underline">Try Demo</a>
+      <a
+        href={AFFILIATE_URL}
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        class="header-btn-play no-underline"
+      >Play Now</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Open navigation menu"
+      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded"
+      style="color: var(--color-text);"
+    >
+      <span class="block w-5 h-0.5" style="background-color: currentColor;"></span>
+      <span class="block w-5 h-0.5" style="background-color: currentColor;"></span>
+      <span class="block w-5 h-0.5" style="background-color: currentColor;"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile backdrop -->
+<div
+  id="mobile-backdrop"
+  class="fixed inset-0 z-40 hidden"
+  style="background-color: rgba(0,0,0,0.6);"
+  aria-hidden="true"
+></div>
+
+<!-- Mobile drawer -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 right-0 z-50 h-full w-72 flex flex-col hidden"
+  style="background-color: var(--color-bg-elevated); border-left: 1px solid var(--color-border);"
+  aria-label="Mobile navigation"
+>
+  <!-- Drawer header -->
+  <div
+    class="flex items-center justify-between px-4 h-16 shrink-0"
+    style="border-bottom: 1px solid var(--color-border);"
+  >
+    <a href="/" class="flex items-center gap-2 no-underline">
+      <img
+        src={config.brand.logo}
+        width="100"
+        height="33"
+        alt={config.brand.name}
+        loading="lazy"
+        class="h-7 w-auto"
+      />
+    </a>
+    <button
+      id="mobile-close-btn"
+      aria-label="Close navigation menu"
+      class="w-8 h-8 flex items-center justify-center rounded"
+      style="color: var(--color-text);"
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Drawer nav -->
+  <nav aria-label="Mobile navigation" class="flex-1 overflow-y-auto px-4 py-4">
+
+    <!-- Starburst home -->
+    <ul class="mb-4" style="list-style: none; padding-left: 0;">
+      <li>
+        <a
+          href="/"
+          class="mobile-nav-link mobile-brand-link flex items-center gap-2 py-2 text-sm font-bold no-underline"
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+          </svg>
+          Starburst
+        </a>
+      </li>
+    </ul>
+
+    <!-- Play group -->
+    <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--color-text-muted);">Play</p>
+    <ul class="mb-4" style="list-style: none; padding-left: 0;">
+      <li>
+        <a
+          href="/demo/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/demo/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Demo</a>
+      </li>
+      <li>
+        <a
+          href="/casinos/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/casinos/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Casinos</a>
+      </li>
+    </ul>
+
+    <!-- Game Guide group -->
+    <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--color-text-muted);">Game Guide</p>
+    <ul class="mb-4" style="list-style: none; padding-left: 0;">
+      <li>
+        <a
+          href="/review/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/review/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Review</a>
+      </li>
+      <li>
+        <a
+          href="/features/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/features/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Features</a>
+      </li>
+      <li>
+        <a
+          href="/how-to-play/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/how-to-play/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >How to Play</a>
+      </li>
+      <li>
+        <a
+          href="/rtp-volatility/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/rtp-volatility/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >RTP &amp; Volatility</a>
+      </li>
+      <li>
+        <a
+          href="/bonuses/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/bonuses/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Bonuses</a>
+      </li>
+      <li>
+        <a
+          href="/strategy/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/strategy/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Strategy</a>
+      </li>
+      <li>
+        <a
+          href="/mobile/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/mobile/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >Mobile</a>
+      </li>
+    </ul>
+
+    <!-- FAQ -->
+    <ul style="list-style: none; padding-left: 0;">
+      <li>
+        <a
+          href="/faq/"
+          class="mobile-nav-link block py-2 text-sm no-underline"
+          style={isActive("/faq/") ? "color: var(--color-primary); font-weight: 600;" : "color: var(--color-text);"}
+        >FAQ</a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- Drawer CTA -->
+  <div class="px-4 py-4 flex flex-col gap-3 shrink-0" style="border-top: 1px solid var(--color-border);">
+    <a
+      href="/demo/"
+      class="mobile-nav-link header-btn-demo block text-center no-underline"
+    >Try Demo Free</a>
+    <a
+      href={AFFILIATE_URL}
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+      class="header-btn-play block text-center no-underline"
+    >Play Now</a>
+  </div>
+
+</div>
+
+<style>
+  /* ── Starburst brand nav link ── */
+  .nav-brand-link {
+    color: var(--color-accent);
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    letter-spacing: 0.01em;
+  }
+  .nav-brand-link:hover,
+  .nav-brand-link[aria-current="page"] {
+    color: #fff;
+    background: rgba(124, 58, 237, 0.22);
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  }
+
+  .mobile-brand-link {
+    color: var(--color-accent);
+  }
+
+  /* ── Demo button — refined purple outline ── */
+  .header-btn-demo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4375rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-accent);
+    background: rgba(124, 58, 237, 0.07);
+    letter-spacing: 0.02em;
+    box-shadow: inset 0 1px 0 rgba(167, 139, 250, 0.1);
+  }
+  .header-btn-demo:hover {
+    background: rgba(124, 58, 237, 0.18);
+    color: #fff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 16px rgba(124, 58, 237, 0.45), inset 0 1px 0 rgba(167, 139, 250, 0.15);
+  }
+
+  /* ── Play Now button — premium amber gradient ── */
+  .header-btn-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4375rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #0f0f13;
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+    box-shadow:
+      0 2px 14px rgba(245, 158, 11, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  }
+  .header-btn-play:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #fb923c 100%);
+    box-shadow:
+      0 4px 22px rgba(245, 158, 11, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const closeBtn = document.getElementById("mobile-close-btn");
+  const menu = document.getElementById("mobile-menu");
+  const backdrop = document.getElementById("mobile-backdrop");
+
+  function openMenu() {
+    menu?.classList.remove("hidden");
+    backdrop?.classList.remove("hidden");
+    btn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    menu?.classList.add("hidden");
+    backdrop?.classList.add("hidden");
+    btn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  btn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+      closeAllDropdowns();
+    }
+  });
+
+  const dropdowns = Array.from(document.querySelectorAll<HTMLDetailsElement>("header details"));
+
+  function closeAllDropdowns() {
+    dropdowns.forEach((d) => (d.open = false));
+  }
+
+  dropdowns.forEach((details) => {
+    details.addEventListener("toggle", () => {
+      if (details.open) {
+        dropdowns.forEach((other) => {
+          if (other !== details) other.open = false;
+        });
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!dropdowns.some((d) => d.contains(e.target as Node))) {
+      closeAllDropdowns();
+    }
+  });
+</script>

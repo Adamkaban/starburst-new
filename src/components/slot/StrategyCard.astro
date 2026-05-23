@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  level: "Beginner" | "Intermediate" | "Advanced";
+  description: string;
+  suitableFor: string;
+}
+
+const { title, level, description, suitableFor } = Astro.props;
+
+const levelBadge = {
+  Beginner: "bg-green-100 text-green-800",
+  Intermediate: "bg-yellow-100 text-yellow-800",
+  Advanced: "bg-orange-100 text-orange-800",
+}[level] ?? "bg-gray-100 text-gray-800";
+---
+
+<div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col gap-4">
+  <div class="flex items-center justify-between gap-4">
+    <h3 class="text-xl font-bold">{title}</h3>
+    <span class={`text-xs font-semibold px-3 py-1 rounded-full ${levelBadge}`}>
+      {level}
+    </span>
+  </div>
+
+  <p class="text-gray-700">{description}</p>
+
+  <div class="flex items-center gap-2 text-sm">
+    <span class="text-gray-500">Best for:</span>
+    <span class="font-medium">{suitableFor}</span>
+  </div>
+</div>

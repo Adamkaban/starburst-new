@@ -1,0 +1,103 @@
+---
+import CTAButton from "../common/CTAButton.astro";
+
+interface SlotStats {
+  rtp: string;
+  volatility: string;
+  maxWin: string;
+  reels: number;
+  paylines: number;
+  minBet: string;
+  maxBet: string;
+  hitFrequency: string;
+  bonusFeatures: string;
+  releaseYear: number;
+  provider: string;
+}
+
+interface Props {
+  slotName: string;
+  provider: string;
+  slotImage: string;
+  description?: string;
+  slotStats: SlotStats;
+  affiliateUrl: string;
+  rating?: number;
+}
+
+const { slotName, provider, slotImage, description, slotStats, affiliateUrl } = Astro.props;
+---
+
+<section class="bg-gray-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+      <!-- Left: Slot image -->
+      <div>
+        <img
+          src={slotImage}
+          width="480"
+          height="360"
+          alt={`${slotName} slot game screenshot`}
+          loading="eager"
+          fetchpriority="high"
+          class="w-full rounded-lg"
+        />
+      </div>
+
+      <!-- Right: Content -->
+      <div>
+        <!-- 18+ badge + provider -->
+        <div class="flex items-center gap-2 mb-2">
+          <span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">18+</span>
+          <span class="text-gray-400">{provider}</span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">{slotName}</h1>
+
+        <!-- Description -->
+        {description && (
+          <p class="text-gray-300 mb-4">{description}</p>
+        )}
+
+        <!-- Quick stats grid -->
+        <div class="grid grid-cols-2 gap-3 mb-6">
+          <div class="bg-gray-800 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-400">RTP</p>
+            <p class="text-lg font-bold text-[#a78bfa]">{slotStats.rtp}</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-400">Volatility</p>
+            <p class="text-lg font-bold text-[#a78bfa]">{slotStats.volatility}</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-400">Max Win</p>
+            <p class="text-lg font-bold text-[#a78bfa]">{slotStats.maxWin}</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-3 text-center">
+            <p class="text-xs text-gray-400">Min Bet</p>
+            <p class="text-lg font-bold text-[#a78bfa]">{slotStats.minBet}</p>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <CTAButton
+            href={affiliateUrl}
+            variant="primary"
+            size="lg"
+            text="Play Starburst Now"
+          />
+          <a
+            href="/demo/"
+            class="inline-block text-center no-underline px-6 py-2.5 text-base rounded-md border-2 border-[#a78bfa] text-[#a78bfa] hover:bg-[#a78bfa] hover:text-white font-semibold"
+          >
+            Try Demo Free
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

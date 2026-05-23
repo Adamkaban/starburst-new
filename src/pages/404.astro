@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const meta = {
+  title:      "Page Not Found – Starburst Slots ZA",
+  description: "The page you requested could not be found. Return to the Starburst Slots ZA homepage.",
+  noindex:    true,
+  ogImage:    "/images/og/og-default.webp",
+  ogImageAlt: "Starburst Slots ZA — page not found",
+};
+---
+
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  ogImage={meta.ogImage}
+  ogImageAlt={meta.ogImageAlt}
+  noindex={meta.noindex}
+>
+  <main id="main-content" class="container section">
+    <div style="max-width: 40rem; margin-inline: auto; text-align: center; padding-block: var(--spacing-2xl);">
+      <p style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: var(--spacing-md);">
+        404
+      </p>
+      <h1 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+        Page Not Found
+      </h1>
+      <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-2xl); line-height: 1.7;">
+        The page you are looking for has moved or does not exist.
+        Return to the homepage or use the navigation to find what you need.
+      </p>
+      <a
+        href="/"
+        style="background-color: var(--color-primary); color: #ffffff; font-weight: 600; padding: 0.75rem 2rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
+      >
+        Back to Home
+      </a>
+    </div>
+  </main>
+</BaseLayout>

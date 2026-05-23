@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import AuthorBox from "../components/ui/AuthorBox.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  noindex?: boolean;
+  schema?: object | object[] | null;
+  ogType?: "website" | "article";
+}
+---
+
+<BaseLayout {...Astro.props}>
+  <main id="main-content" class="container section">
+    <slot />
+    <AuthorBox />
+  </main>
+</BaseLayout>

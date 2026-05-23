@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+
+const meta = {
+  title:      "Terms of Use – Starburst Slots ZA",
+  description: "Terms of use for starburstslots.co.za. Content is for informational purposes only. Affiliate disclosure and limitation of liability.",
+  canonical:  "https://starburstslots.co.za/terms-of-use/",
+  noindex:    true,
+  ogImage:    "/images/og/og-default.webp",
+  ogImageAlt: "Starburst Slots ZA terms of use",
+};
+
+const schema = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Terms of Use", path: "/terms-of-use/" },
+]);
+---
+
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  ogImage={meta.ogImage}
+  ogImageAlt={meta.ogImageAlt}
+  noindex={meta.noindex}
+  schema={schema}
+>
+  <main id="main-content" class="container section">
+    <div style="max-width: var(--content-max); margin-inline: auto;">
+
+      <h1 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+        Terms of Use
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--spacing-2xl);">
+        Last updated: 23 May 2026
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: var(--spacing-2xl); color: var(--color-text-muted); line-height: 1.8;">
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">1. Acceptance of Terms</h2>
+          <p>
+            By accessing starburstslots.co.za, you agree to these terms of use. If you do not agree, do not use this site.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">2. Purpose</h2>
+          <p>
+            This site provides informational content about the Starburst slot game by NetEnt and related casino topics.
+            Content is for informational and entertainment purposes only.
+            Nothing on this site constitutes financial advice, legal advice, or a guarantee of gambling outcomes.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">3. Age Restriction</h2>
+          <p>
+            This site is intended for users aged 18 and over. Gambling is restricted to adults in South Africa.
+            If you are under 18, do not use this site or follow links to casino operators.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">4. Affiliate Disclosure</h2>
+          <p>
+            This site participates in affiliate programmes with casino operators. When you click certain links and complete qualifying actions (such as registering and depositing),
+            we may receive a commission. This does not affect the terms or prices offered to you by the casino.
+            All affiliate links are marked with <code>rel="nofollow"</code>.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">5. Accuracy of Information</h2>
+          <p>
+            We make reasonable efforts to keep RTP figures, bonus terms, and casino information accurate and up to date.
+            However, casino terms change frequently. Always verify current terms directly with the casino operator before making any financial decisions.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">6. Limitation of Liability</h2>
+          <p>
+            We are not liable for any losses — financial or otherwise — resulting from gambling activity undertaken after visiting this site.
+            Gambling carries financial risk. Never wager money you cannot afford to lose.
+            We are not liable for the practices or content of third-party casino sites linked from this site.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">7. Intellectual Property</h2>
+          <p>
+            All original content on this site (text, structure, code) is the property of Starburst Slots ZA.
+            Game imagery and trademarks related to Starburst are the property of NetEnt AB.
+            Reproduction of this site's content without written permission is prohibited.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">8. Governing Law</h2>
+          <p>
+            These terms are governed by the laws of South Africa.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</BaseLayout>

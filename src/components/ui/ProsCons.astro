@@ -1,0 +1,35 @@
+---
+import { Check, X } from "@lucide/astro";
+
+interface Props {
+  pros: string[];
+  cons: string[];
+}
+
+const { pros, cons } = Astro.props;
+---
+
+<div class="pros-cons" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+  <div class="pros">
+    <h3>Pros</h3>
+    <ul style="list-style: none; padding: 0;">
+      {pros.map((pro) => (
+        <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+          <Check size={16} color="var(--color-primary)" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;" />
+          {pro}
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class="cons">
+    <h3>Cons</h3>
+    <ul style="list-style: none; padding: 0;">
+      {cons.map((con) => (
+        <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+          <X size={16} color="#dc2626" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;" />
+          {con}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

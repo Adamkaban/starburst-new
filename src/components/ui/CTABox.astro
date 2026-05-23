@@ -1,0 +1,37 @@
+---
+interface Props {
+  affiliateUrl: string;
+  ctaText?: string;
+  ctaAlt?: string;
+  showAge?: boolean;
+}
+
+const {
+  affiliateUrl,
+  ctaText = "Play Starburst Now",
+  ctaAlt,
+  showAge = true,
+} = Astro.props;
+---
+
+<div class="cta-box">
+  <a
+    href={affiliateUrl}
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+    class="cta-button"
+  >
+    {ctaText}
+  </a>
+  {ctaAlt && (
+    <a
+      href={affiliateUrl}
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+      class="cta-button-alt"
+    >
+      {ctaAlt}
+    </a>
+  )}
+  {showAge && <p class="age-notice">18+ | Play Responsibly</p>}
+</div>

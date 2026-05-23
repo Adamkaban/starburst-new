@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import StatGrid from '../components/ui/StatGrid.astro';
+import Steps from '../components/ui/Steps.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import FeaturesGrid from '../components/sections/FeaturesGrid.astro';
+import CasinoHighlight from '../components/sections/CasinoHighlight.astro';
+import {
+  buildHomepageSchema,
+  buildReviewSchema,
+  buildBreadcrumbs,
+} from '../components/seo/SchemaBuilder';
+import { AFFILIATE_URL } from '../data/casinos';
+
+const schema = [
+  ...buildHomepageSchema(),
+  buildReviewSchema(),
+  buildBreadcrumbs([{ name: 'Home', path: '/' }]),
+];
+
+const stats = [
+  { label: 'Provider',       value: 'NetEnt' },
+  { label: 'RTP',            value: '96.09%',      highlight: true },
+  { label: 'Volatility',     value: 'Low' },
+  { label: 'Max Win',        value: '500× stake',   highlight: true },
+  { label: 'Reels',          value: '5 × 3 grid' },
+  { label: 'Min Bet',        value: 'R1.80' },
+  { label: 'Hit Frequency',  value: '22.6%' },
+  { label: 'Release',        value: '2012' },
+];
+
+const steps = [
+  {
+    num: 1,
+    title: 'Choose a Casino',
+    description: 'Pick a licensed SA operator with ZAR deposits. 1win carries the full NetEnt catalogue with a welcome bonus for new players.',
+  },
+  {
+    num: 2,
+    title: 'Find the Game',
+    description: 'Search "Starburst" in the slots lobby. Or try the free demo on this page first — no account needed.',
+  },
+  {
+    num: 3,
+    title: 'Set Your Bet',
+    description: 'Starburst runs from R1.80 to R1,800 per spin. A sensible starting point is 1–2% of your session budget per spin.',
+  },
+  {
+    num: 4,
+    title: 'Watch Reels 2, 3 and 4',
+    description: "That's where the Wild can land. When it does, it expands to fill the reel and triggers a re-spin — the most exciting moment in the game.",
+  },
+  {
+    num: 5,
+    title: 'Set Your Limits',
+    description: "Decide your session budget and stop point before you spin. Starburst's fast pace makes it easy to play longer than planned.",
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Does Starburst pay real money?',
+    answer: 'Yes — at licensed real-money casinos. Demo mode uses virtual credits only. Switch to real-money play and every win pays out in ZAR to your casino balance.',
+  },
+  {
+    question: 'What is the Starburst RTP?',
+    answer: 'The standard RTP is 96.09% — above the industry average. Some casinos run a lower configuration. Always check the in-game paytable before playing.',
+  },
+  {
+    question: 'Does Starburst have free spins?',
+    answer: 'Not in the traditional sense. Instead of a free spins bonus round, Starburst uses a re-spin mechanic triggered by the expanding Wild — up to three consecutive re-spins.',
+  },
+  {
+    question: 'What is the maximum win on Starburst?',
+    answer: '500× your total bet per spin. At R1,800 (maximum stake) that\'s R900,000. In practice, the biggest wins come from three locked Wild reels paying in both directions.',
+  },
+  {
+    question: 'Can I play Starburst on mobile in South Africa?',
+    answer: 'Yes. It runs fully in your mobile browser on Android and iOS — no download needed. The layout adapts cleanly to phone screens in both portrait and landscape.',
+  },
+  {
+    question: 'Is Starburst low or high volatility?',
+    answer: 'Low volatility. Hit frequency is 22.6% — roughly one win in every five spins. Wins are frequent but smaller. Ideal for players who prefer longer, steadier sessions.',
+  },
+  {
+    question: 'What is the minimum bet on Starburst?',
+    answer: 'Approximately R1.80 per spin at most ZAR casinos (converted from £0.10 base). Maximum bet is approximately R1,800 per spin.',
+  },
+];
+---
+
+<BaseLayout
+  title="Starburst Slot SA — Demo & Casinos – Starburst Slots ZA"
+  description="Play Starburst slot free demo in South Africa. Full review, RTP 96.09%, expanding wilds guide and best ZAR casinos rated by Johan van der Merwe. 2026."
+  ogImage="/images/og/og-default.webp"
+  ogImageAlt="Starburst Slots ZA — South Africa's Starburst guide"
+  ogType="website"
+  noindex={false}
+  schema={schema}
+>
+  <main id="main-content">
+
+    <!-- 1. Hero -->
+    <Hero />
+
+    <!-- 3. Quick Info -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-text); margin: 0;">
+            Quick Info
+          </h2>
+          <img
+            src="/images/providers/netent.webp"
+            width="200"
+            height="80"
+            alt="NetEnt — Starburst developer"
+            loading="lazy"
+            style="height: 32px; width: auto;"
+          />
+        </div>
+        <StatGrid stats={stats} />
+      </div>
+    </section>
+
+    <!-- 4. About -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+          Why Starburst Is Still Worth Playing in 2026
+        </h2>
+        <div style="color: var(--color-text-muted); line-height: 1.8; display: flex; flex-direction: column; gap: var(--spacing-lg);">
+          <p>
+            Starburst has spent over 14 years in the top-ten most-played slots globally — not out of nostalgia,
+            but because the core mechanics still deliver. No bloated bonus rounds, no convoluted rules.
+            Just a slot that does a few things very well and gives you room to breathe between sessions.
+          </p>
+          <p>
+            What makes it work is the combination of Win Both Ways and the Expanding Wild.
+            When the Wild lands on reels 2, 3, or 4, it fills the entire reel and locks it while the remaining reels re-spin —
+            up to three times in a row. That re-spin chain is the game's defining moment and it happens often enough
+            to keep low-volatility sessions interesting.
+          </p>
+          <p>
+            For South African players, the low minimum bet of approximately R1.80 makes Starburst practical.
+            A R200 session budget gives you well over 100 spins, with no app download or installation required —
+            it runs directly in your mobile browser on any Android or iOS device.
+          </p>
+          <p>
+            The honest caveat: a maximum win of 500× your stake is modest compared to modern slots with 5,000× or 10,000× potential.
+            There is no bonus round, no scatter, no multiplier trail. But that simplicity is precisely the point.
+            Starburst is one of the most consistent, bankroll-friendly slots available in 2026.
+          </p>
+        </div>
+        <p style="margin-top: var(--spacing-xl);">
+          <a href="/review/" style="color: var(--color-accent); text-decoration: underline; font-weight: 500;">
+            Read the full review →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Key Features -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+          Starburst Key Features
+        </h2>
+        <FeaturesGrid />
+      </div>
+    </section>
+
+    <!-- 6. Where to Play -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+          Where to Play Starburst in South Africa
+        </h2>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); line-height: 1.7; max-width: 60ch;">
+          Starburst is available at most licensed online casinos. For South African players, these options stand out
+          for ZAR support, fast payouts, and genuine NetEnt software.
+        </p>
+        <CasinoHighlight />
+      </div>
+    </section>
+
+    <!-- 7. How to Play -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 52rem; margin-inline: auto;">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+          How to Play Starburst
+        </h2>
+        <Steps steps={steps} />
+      </div>
+    </section>
+
+    <!-- 8. Strategy Tips -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text);">
+          Starburst Strategy Tips
+        </h2>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); line-height: 1.7; max-width: 60ch;">
+          No strategy changes Starburst's RTP or guarantees wins. What does make a real difference
+          is how you manage your bankroll across a session.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4" style="margin-bottom: var(--spacing-xl);">
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-xl);">
+            <h3 style="font-weight: 700; font-size: 1rem; margin-bottom: var(--spacing-sm); color: var(--color-text);">
+              Flat Betting
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Stake the same amount every spin. It extends your session and keeps bankroll depletion predictable.
+            </p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-xl);">
+            <h3 style="font-weight: 700; font-size: 1rem; margin-bottom: var(--spacing-sm); color: var(--color-text);">
+              Session Budget
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Decide your limit before the first spin. At R1.80 minimum, R200 gives you 100+ spins of actual play.
+            </p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-xl);">
+            <h3 style="font-weight: 700; font-size: 1rem; margin-bottom: var(--spacing-sm); color: var(--color-text);">
+              Use the Demo
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Run 50–100 demo spins before playing for real. See how often Wilds land and what re-spin chains feel like.
+            </p>
+          </div>
+        </div>
+        <p>
+          <a href="/strategy/" style="color: var(--color-accent); text-decoration: underline; font-weight: 500;">
+            Read the full strategy guide →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section style="padding-block: var(--spacing-2xl); border-top: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 52rem; margin-inline: auto;">
+        <h2 style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">
+          Frequently Asked Questions
+        </h2>
+        <FAQSection items={faqItems} />
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

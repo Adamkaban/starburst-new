@@ -1,0 +1,77 @@
+{
+  "$ref": "#/definitions/pages",
+  "definitions": {
+    "pages": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "publishedDate": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "type": "string"
+        },
+        "ogImage": {
+          "type": "string"
+        },
+        "ogImageAlt": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string",
+          "default": "johan-van-der-merwe"
+        },
+        "noindex": {
+          "type": "boolean",
+          "default": false
+        },
+        "schema": {
+          "type": "string",
+          "enum": [
+            "article",
+            "webpage",
+            "faq"
+          ],
+          "default": "article"
+        },
+        "faqItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "question",
+              "answer"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "publishedDate",
+        "lastUpdated",
+        "ogImage",
+        "ogImageAlt"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

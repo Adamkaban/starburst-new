@@ -1,0 +1,42 @@
+---
+interface Props {
+  items: Array<{ question: string; answer: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+<section itemscope itemtype="https://schema.org/FAQPage">
+  {items.map((item) => (
+    <details
+      itemscope
+      itemprop="mainEntity"
+      itemtype="https://schema.org/Question"
+      style="border-bottom: 1px solid var(--color-border); padding-block: 0.75rem;"
+    >
+      <summary
+        style="cursor: pointer; list-style: none; color: var(--color-text); font-weight: 500; display: flex; align-items: center; gap: 0.5rem;"
+      >
+        <h3
+          itemprop="name"
+          style="display: inline; font-size: 1rem; font-weight: inherit; margin: 0;"
+        >
+          {item.question}
+        </h3>
+      </summary>
+      <div
+        itemscope
+        itemprop="acceptedAnswer"
+        itemtype="https://schema.org/Answer"
+        style="padding-block: 0.5rem;"
+      >
+        <p
+          itemprop="text"
+          style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0; line-height: 1.6;"
+        >
+          {item.answer}
+        </p>
+      </div>
+    </details>
+  ))}
+</section>

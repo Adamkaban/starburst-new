@@ -1,0 +1,34 @@
+---
+interface Props {
+  href: string;
+  variant?: "primary" | "outline";
+  size?: "lg" | "md" | "sm";
+  text: string;
+}
+
+const { href, variant = "primary", size = "md", text } = Astro.props;
+
+// Size classes
+const sizeClasses = {
+  lg: "px-8 py-3 text-lg rounded-lg",
+  md: "px-6 py-2.5 text-base rounded-md",
+  sm: "px-4 py-2 text-sm rounded-md",
+};
+
+// Variant classes
+const variantClasses = {
+  primary: "bg-[#7c3aed] text-white hover:bg-[#6d28d9] font-semibold",
+  outline: "border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-semibold",
+};
+
+const combinedClasses = `inline-block text-center no-underline ${sizeClasses[size]} ${variantClasses[variant]}`;
+---
+
+<a
+  href={href}
+  rel="nofollow noopener noreferrer"
+  target="_blank"
+  class={combinedClasses}
+>
+  {text}
+</a>

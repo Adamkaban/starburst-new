@@ -1,0 +1,22 @@
+---
+interface Props {
+  type: 'info' | 'warning' | 'tip';
+  title?: string;
+}
+
+const { type, title } = Astro.props;
+
+const borderColors: Record<string, string> = {
+  info:    'var(--color-primary)',
+  warning: '#f59e0b',
+  tip:     '#10b981',
+};
+---
+
+<div
+  class="rounded-md"
+  style={`background-color: var(--color-bg-elevated); border-left: 4px solid ${borderColors[type]}; padding: var(--spacing-md);`}
+>
+  {title && <strong class="block mb-1">{title}</strong>}
+  <slot />
+</div>

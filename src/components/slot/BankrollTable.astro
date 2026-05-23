@@ -1,0 +1,65 @@
+---
+interface BankrollProfile {
+  budget: string;
+  betSize: string;
+  stopLoss: string;
+  takeProfit: string;
+}
+
+interface Props {
+  conservative: BankrollProfile;
+  balanced: BankrollProfile;
+  aggressive: BankrollProfile;
+}
+
+const { conservative, balanced, aggressive } = Astro.props;
+---
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">Bankroll Management Guide</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-[#7c3aed] text-white">
+            <th class="py-3 px-4">Profile</th>
+            <th class="py-3 px-4">Conservative</th>
+            <th class="py-3 px-4">Balanced</th>
+            <th class="py-3 px-4">Aggressive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-3 px-4 font-medium text-gray-600 bg-gray-100">Session Budget</td>
+            <td class="py-3 px-4">{conservative.budget}</td>
+            <td class="py-3 px-4">{balanced.budget}</td>
+            <td class="py-3 px-4">{aggressive.budget}</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-3 px-4 font-medium text-gray-600 bg-gray-100">Bet Size</td>
+            <td class="py-3 px-4">{conservative.betSize}</td>
+            <td class="py-3 px-4">{balanced.betSize}</td>
+            <td class="py-3 px-4">{aggressive.betSize}</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-3 px-4 font-medium text-gray-600 bg-gray-100">Stop-Loss</td>
+            <td class="py-3 px-4">{conservative.stopLoss}</td>
+            <td class="py-3 px-4">{balanced.stopLoss}</td>
+            <td class="py-3 px-4">{aggressive.stopLoss}</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium text-gray-600 bg-gray-100">Take-Profit</td>
+            <td class="py-3 px-4">{conservative.takeProfit}</td>
+            <td class="py-3 px-4">{balanced.takeProfit}</td>
+            <td class="py-3 px-4">{aggressive.takeProfit}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-4">
+      These are session management guidelines. Gambling outcomes are determined by RNG and no bankroll strategy guarantees profit.
+    </p>
+  </div>
+</section>

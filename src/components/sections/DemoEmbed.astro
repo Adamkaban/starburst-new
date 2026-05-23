@@ -1,0 +1,103 @@
+---
+import { AFFILIATE_URL } from '../../data/casinos';
+
+interface Props {
+  demoUrl: string | null;
+}
+
+const { demoUrl } = Astro.props;
+---
+
+<div
+  class="demo-wrap"
+  data-demo-url={demoUrl ?? ''}
+  style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align: center;"
+>
+  {demoUrl === null ? (
+    <div>
+      <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-lg);">
+        Demo coming soon. In the meantime, try the full game at a licensed SA casino.
+      </p>
+      <a
+        href={AFFILIATE_URL}
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        style="background-color: var(--color-primary); color: #ffffff; font-weight: 600; padding: 0.75rem 2rem; font-size: 1rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
+      >
+        Play for Real
+      </a>
+    </div>
+  ) : (
+    <>
+      {/* State 1: shown by default */}
+      <div id="demo-start">
+        <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-md); font-size: 0.9rem;">
+          Loads only after you click. No third-party frame until you choose.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; margin-bottom: var(--spacing-md);">
+          <button
+            id="demo-load-btn"
+            type="button"
+            style="background-color: var(--color-cta); color: #0f0f13; font-weight: 700; padding: 0.75rem 2rem; font-size: 1rem; border-radius: var(--radius-full); border: none; cursor: pointer;"
+          >
+            Launch Starburst Demo
+          </button>
+          <a
+            href={AFFILIATE_URL}
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="background-color: var(--color-primary); color: #ffffff; font-weight: 600; padding: 0.75rem 2rem; font-size: 1rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
+          >
+            Play for Real
+          </a>
+        </div>
+      </div>
+
+      {/* State 2: loading spinner — hidden initially via inline style */}
+      <div
+        id="demo-loading"
+        style="display: none; padding: var(--spacing-xl); color: var(--color-text-muted);"
+      >
+        <p>Loading…</p>
+      </div>
+
+      {/* State 3: iframe — hidden initially via inline style */}
+      <iframe
+        id="demo-iframe"
+        title="Starburst slot demo"
+        allow="fullscreen"
+        src=""
+        width="100%"
+        height="500"
+        style="display: none; border: none; border-radius: var(--radius-md);"
+      ></iframe>
+    </>
+  )}
+</div>
+
+<script>
+  (function () {
+    const wrap = document.querySelector('.demo-wrap[data-demo-url]');
+    if (!wrap) return;
+    const url = wrap.getAttribute('data-demo-url');
+    // Empty string means demoUrl was null — nothing to load
+    if (!url) return;
+
+    const btn     = document.getElementById('demo-load-btn') as HTMLButtonElement | null;
+    const start   = document.getElementById('demo-start') as HTMLDivElement | null;
+    const loading = document.getElementById('demo-loading') as HTMLDivElement | null;
+    const iframe  = document.getElementById('demo-iframe') as HTMLIFrameElement | null;
+
+    if (!btn || !start || !loading || !iframe) return;
+
+    btn.addEventListener('click', function () {
+      start.style.display  = 'none';
+      loading.style.display = 'block';
+      iframe.style.display  = 'block';
+      iframe.src = url;
+      iframe.addEventListener('load', function () {
+        loading.style.display = 'none';
+      }, { once: true });
+    });
+  })();
+</script>
