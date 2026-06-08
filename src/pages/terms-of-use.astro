@@ -1,20 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+import { buildBreadcrumbs, buildWebPageSchema } from "../components/seo/SchemaBuilder";
 
 const meta = {
   title:      "Terms of Use – Starburst Slots ZA",
-  description: "Terms of use for starburstslots.co.za. Content is for informational purposes only. Affiliate disclosure and limitation of liability.",
-  canonical:  "https://starburstslots.co.za/terms-of-use/",
+  description: "Terms of use for starburstslots.co.za — your rights, our obligations, and the conditions governing use of this affiliate review website.",
   noindex:    true,
   ogImage:    "/images/og/og-default.webp",
   ogImageAlt: "Starburst Slots ZA terms of use",
 };
 
-const schema = buildBreadcrumbs([
-  { name: "Home", path: "/" },
-  { name: "Terms of Use", path: "/terms-of-use/" },
-]);
+const schema = [
+  buildWebPageSchema("https://starburstslots.co.za/terms-of-use/", "Terms of Use"),
+  buildBreadcrumbs([
+    { name: "Home", path: "/" },
+    { name: "Terms of Use", path: "/terms-of-use/" },
+  ]),
+];
 ---
 
 <BaseLayout

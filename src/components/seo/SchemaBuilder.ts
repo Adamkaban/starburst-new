@@ -37,6 +37,7 @@ export function buildReviewSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Review",
+    datePublished: "2026-01-10",
     reviewRating: {
       "@type": "Rating",
       ratingValue: String(config.game.rating),
@@ -60,7 +61,9 @@ export function buildReviewSchema() {
 export function buildArticleSchema(
   title: string,
   publishedDate: string,
-  lastUpdated: string
+  lastUpdated: string,
+  url: string,
+  image?: string,
 ) {
   return {
     "@context": "https://schema.org",
@@ -68,6 +71,8 @@ export function buildArticleSchema(
     headline: title,
     datePublished: publishedDate,
     dateModified: lastUpdated,
+    url,
+    ...(image ? { image: `${BASE_URL}${image}` } : {}),
     author: {
       "@type": "Person",
       name: config.brand.author,
@@ -75,7 +80,21 @@ export function buildArticleSchema(
     publisher: {
       "@type": "Organization",
       name: config.brand.name,
+      url: `${BASE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${config.brand.logo}`,
+      },
     },
+  };
+}
+
+export function buildWebPageSchema(url: string, name: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    url,
   };
 }
 

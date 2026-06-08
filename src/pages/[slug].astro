@@ -49,7 +49,7 @@ const pageNames: Record<string, string> = {
 const pageName = pageNames[entry.slug] ?? entry.slug;
 
 const schemas: object[] = [
-  buildArticleSchema(title, publishedDate, lastUpdated),
+  buildArticleSchema(title, publishedDate, lastUpdated, Astro.url.href, ogImage),
   buildBreadcrumbs([
     { name: "Home", path: "/" },
     { name: pageName, path: `/${entry.slug}/` },

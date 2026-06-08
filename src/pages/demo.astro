@@ -2,22 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTABox from "../components/ui/CTABox.astro";
 import { AFFILIATE_URL } from "../data/casinos";
-import { buildBreadcrumbs } from "../components/seo/SchemaBuilder";
+import { buildBreadcrumbs, buildWebPageSchema } from "../components/seo/SchemaBuilder";
 
 const meta = {
   title:       "Starburst Demo – Starburst Slots ZA",
   description: "Play Starburst demo free — no registration, no deposit required. Try the slot with virtual credits. South African players welcome. Switch to real ZAR anytime.",
-  canonical:   "https://starburstslots.co.za/demo/",
   noindex:     false,
   ogImage:     "/images/og/starburst-demo.webp",
   ogImageAlt:  "Starburst demo slot — play free, no registration required",
-  schema:      "webpage",
 };
 
-const schema = buildBreadcrumbs([
-  { name: "Home", path: "/" },
-  { name: "Demo", path: "/demo/" },
-]);
+const schema = [
+  buildWebPageSchema("https://starburstslots.co.za/demo/", "Starburst Demo — Play Free"),
+  buildBreadcrumbs([
+    { name: "Home", path: "/" },
+    { name: "Demo", path: "/demo/" },
+  ]),
+];
 ---
 
 <BaseLayout
