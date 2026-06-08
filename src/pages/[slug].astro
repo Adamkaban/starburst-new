@@ -6,6 +6,7 @@ import CasinoTable from "../components/ui/CasinoTable.astro";
 import FAQSection from "../components/sections/FAQSection.astro";
 import AuthorBox from "../components/ui/AuthorBox.astro";
 import { AFFILIATE_URL, casinos } from "../data/casinos";
+import config from "../../site.config";
 import {
   buildArticleSchema,
   buildBreadcrumbs,
@@ -49,7 +50,7 @@ const pageNames: Record<string, string> = {
 const pageName = pageNames[entry.slug] ?? entry.slug;
 
 const schemas: object[] = [
-  buildArticleSchema(title, publishedDate, lastUpdated, Astro.url.href, ogImage),
+  buildArticleSchema(title, publishedDate, lastUpdated, `${config.seo.siteUrl}/${entry.slug}/`, ogImage),
   buildBreadcrumbs([
     { name: "Home", path: "/" },
     { name: pageName, path: `/${entry.slug}/` },
