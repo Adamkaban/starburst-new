@@ -20,11 +20,11 @@ faqItems:
   - question: "Can I play Starburst on mobile in South Africa?"
     answer: "Yes. Full HTML5, runs directly in your browser on Android and iOS — no app download needed. Touch controls and layout adapt cleanly to phone screens."
   - question: "Is Starburst low or high volatility?"
-    answer: "Low volatility. Hit frequency is 22.6% — roughly one win in every five spins. Wins are frequent but smaller, ideal for longer ZAR sessions on a modest budget."
+    answer: "Low volatility. Hit frequency is 22.6% — roughly one win in every four to five spins. Wins are frequent but smaller, ideal for longer ZAR sessions on a modest budget."
   - question: "What is the minimum bet on Starburst?"
     answer: "Approximately R1.80 per spin at most ZAR casinos. Maximum bet is approximately R1,800 per spin."
   - question: "Is Starburst a legit slot?"
-    answer: "Yes. Built by NetEnt, regulated by the Malta Gaming Authority and UKGC, with RNG independently certified by eCOGRA and iTech Labs across billions of real spins."
+    answer: "Yes. Built by NetEnt, a developer licensed by the Malta Gaming Authority and UKGC, with RNG independently certified by eCOGRA and iTech Labs across billions of real spins."
 ---
 
 # Starburst Slot 2026 FAQ: Real Money, Legit Wins & Everything SA Players Need to Know
