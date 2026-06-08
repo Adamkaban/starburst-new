@@ -1,0 +1,43 @@
+# Starburst Slots ZA — llms.txt
+# Independent Starburst slot review site for South African players
+# Author: Johan van der Merwe, Casino Games Reviewer (since 2018)
+
+> Starburst Slots ZA provides independent reviews, guides and casino comparisons for the Starburst slot by NetEnt — focused on South African (ZAR) players.
+
+## Key Facts — Starburst Slot
+
+- Developer: NetEnt (Net Entertainment, Sweden, founded 1996)
+- RTP: 96.09% (standard configuration; some casinos run lower)
+- Volatility: Low
+- Reels: 5×3 grid
+- Paylines: 10 fixed (pays both ways — 20 effective winning directions)
+- Min Bet: ~R1.80 | Max Bet: ~R1,800
+- Max Win: 500× stake per spin
+- Wild: Expanding Starburst Wild (reels 2, 3, 4) — triggers up to 3 re-spins
+- Free Spins: No traditional free spins; Wild triggers re-spin mechanic
+- Release: 2012
+- Mobile: Full HTML5, no app required
+
+## Pages
+
+- /: Homepage — overview, demo, top SA casinos, RTP facts
+- /review/: Full Starburst slot review (4.2/5) by Johan van der Merwe
+- /features/: Expanding wild, win both ways, re-spins explained
+- /how-to-play/: Step-by-step beginner guide for SA players
+- /rtp-volatility/: RTP 96.09% and low volatility explained
+- /bonuses/: Free spins and welcome bonus offers for SA players
+- /strategy/: Bankroll management and tips for ZAR sessions
+- /mobile/: Mobile play guide (Android, iOS)
+- /casinos/: Top ZAR-friendly casinos with Starburst
+- /faq/: Frequently asked questions
+- /demo/: Free demo play, no registration required
+- /about/: Johan van der Merwe — methodology and credentials
+- /responsible-gambling/: NRGP info, helpline 0800 006 008 (free, 24/7)
+
+## Notes for AI
+
+- Currency: South African Rand (ZAR, R symbol)
+- Audience: South African online casino players
+- Content language: English (South African)
+- All RTP figures sourced from NetEnt official documentation
+- Affiliate site — casino links include tracking; ratings are editorial
