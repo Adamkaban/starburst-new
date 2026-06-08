@@ -2,12 +2,29 @@
 title: "Starburst Slot FAQ SA 2026 – Starburst Slots ZA"
 description: "Honest answers to every Starburst slot question SA players ask — real money, legit wins, RTP, mobile play, bonuses and how to pick a safe ZAR casino in 2026."
 publishedDate: "2026-01-10"
-lastUpdated: "2026-05-20"
+lastUpdated: "2026-06-08"
 ogImage: "/images/og/starburst-faq.webp"
 ogImageAlt: "Starburst slot FAQ for South African players 2026"
 schema: "faq"
 author: "johan-van-der-merwe"
 noindex: false
+faqItems:
+  - question: "Does Starburst pay real money?"
+    answer: "Yes — at licensed real-money casinos. Demo mode uses virtual credits only. Switch to real-money play at a licensed ZAR casino and every win pays out to your balance."
+  - question: "What is the Starburst RTP?"
+    answer: "The standard RTP is 96.09%. Some casinos run a lower configuration — always check the in-game paytable before playing for real money."
+  - question: "Does Starburst have free spins?"
+    answer: "No traditional free spins. The Wild triggers a re-spin mechanic — up to three consecutive re-spins with locked expanding Wilds."
+  - question: "What is the maximum win on Starburst?"
+    answer: "500× your total bet per spin. At maximum stake of R1,800 that is R900,000. In practice the biggest wins come from three locked Wild reels paying both ways simultaneously."
+  - question: "Can I play Starburst on mobile in South Africa?"
+    answer: "Yes. Full HTML5, runs directly in your browser on Android and iOS — no app download needed. Touch controls and layout adapt cleanly to phone screens."
+  - question: "Is Starburst low or high volatility?"
+    answer: "Low volatility. Hit frequency is 22.6% — roughly one win in every five spins. Wins are frequent but smaller, ideal for longer ZAR sessions on a modest budget."
+  - question: "What is the minimum bet on Starburst?"
+    answer: "Approximately R1.80 per spin at most ZAR casinos. Maximum bet is approximately R1,800 per spin."
+  - question: "Is Starburst a legit slot?"
+    answer: "Yes. Built by NetEnt, regulated by the Malta Gaming Authority and UKGC, with RNG independently certified by eCOGRA and iTech Labs across billions of real spins."
 ---
 
 # Starburst Slot 2026 FAQ: Real Money, Legit Wins & Everything SA Players Need to Know
