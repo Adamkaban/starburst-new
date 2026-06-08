@@ -1,6 +1,6 @@
 ---
 title: "Starburst RTP & Volatility 2026 – Starburst Slots ZA"
-description: "Full breakdown of Starburst slot RTP 96.09% and low volatility for South African players — what the numbers mean, max win potential and how to use them when playing."
+description: "Starburst slot RTP 96.09% and low volatility explained for SA players — what the numbers mean, max win potential and session tips."
 publishedDate: "2026-01-10"
 lastUpdated: "2026-05-20"
 ogImage: "/images/og/starburst-rtp-volatility.webp"

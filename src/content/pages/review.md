@@ -1,6 +1,6 @@
 ---
 title: "Starburst Slot Review 2026 SA – Starburst Slots ZA"
-description: "Full Starburst slot review for South African players — RTP 96.09%, low volatility, expanding wilds, mobile performance and best ZAR casinos rated by Johan van der Merwe."
+description: "Full Starburst review for SA players — RTP 96.09%, low volatility, expanding wilds, mobile and best ZAR casinos rated by Johan van der Merwe. 2026."
 publishedDate: "2026-01-10"
 lastUpdated: "2026-05-20"
 ogImage: "/images/og/starburst-review.webp"

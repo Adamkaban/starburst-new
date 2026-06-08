@@ -1,6 +1,6 @@
 ---
 title: "How to Play Starburst – Starburst Slots ZA"
-description: "Complete beginner's guide to Starburst slot for South African players. Controls, expanding wilds, re-spins, bet settings and ZAR bankroll tips explained step by step."
+description: "Step-by-step Starburst guide for South African beginners — controls, expanding wilds, re-spins, bet settings and ZAR bankroll tips explained."
 publishedDate: "2026-01-10"
 lastUpdated: "2026-05-20"
 ogImage: "/images/og/starburst-how-to-play.webp"

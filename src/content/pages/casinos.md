@@ -1,6 +1,6 @@
 ---
 title: "Best Starburst Casinos SA 2026 – Starburst Slots ZA"
-description: "Top ZAR-friendly casinos for Starburst in South Africa. Tested withdrawals, bonuses and local payments. Claim 600% welcome bonus at 1win with promo code STRS2026."
+description: "Top ZAR-friendly casinos for Starburst in South Africa 2026. Licensed operators, ZAR payments, bonuses and withdrawal speed tested by Johan van der Merwe."
 publishedDate: "2026-01-10"
 lastUpdated: "2026-05-20"
 ogImage: "/images/og/starburst-casinos-south-africa.webp"
