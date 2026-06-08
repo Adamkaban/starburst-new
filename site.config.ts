@@ -50,6 +50,12 @@ const config = {
     ratingMax:   5,
   },
 
+  // ─── SOCIAL (sameAs entity signals for AI/LLM parsers) ──
+  social: {
+    organization: [] as string[], // add profile URLs when available, e.g. "https://twitter.com/..."
+    author:       [] as string[], // author LinkedIn, Twitter, etc.
+  },
+
   // ─── RESPONSIBLE GAMBLING ────────────────────────────
   responsible: {
     disclaimer: "Gambling involves risk. Play responsibly. 18+ only.",

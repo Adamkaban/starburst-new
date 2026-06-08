@@ -16,6 +16,18 @@ export function buildBreadcrumbs(items: { name: string; path: string }[]) {
 }
 
 export function buildHomepageSchema() {
+  const org: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: config.brand.name,
+    url: `${BASE_URL}/`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}${config.brand.logo}`,
+    },
+  };
+  if (config.social.organization.length) org.sameAs = config.social.organization;
+
   return [
     {
       "@context": "https://schema.org",
@@ -23,13 +35,7 @@ export function buildHomepageSchema() {
       name: config.brand.name,
       url: `${BASE_URL}/`,
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: config.brand.name,
-      url: `${BASE_URL}/`,
-      logo: `${BASE_URL}${config.brand.logo}`,
-    },
+    org,
   ];
 }
 
@@ -64,6 +70,7 @@ export function buildArticleSchema(
   lastUpdated: string,
   url: string,
   image?: string,
+  description?: string,
 ) {
   return {
     "@context": "https://schema.org",
@@ -72,6 +79,7 @@ export function buildArticleSchema(
     datePublished: publishedDate,
     dateModified: lastUpdated,
     url,
+    ...(description ? { description } : {}),
     ...(image ? { image: `${BASE_URL}${image}` } : {}),
     author: {
       "@type": "Person",
@@ -129,11 +137,34 @@ export function buildCasinoListSchema(
 }
 
 export function buildAuthorSchema() {
-  return {
+  const person: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: config.brand.author,
     jobTitle: "Casino Games Reviewer",
     url: `${BASE_URL}/about/`,
+  };
+  if (config.social.author.length) person.sameAs = config.social.author;
+  return person;
+}
+
+export function buildVideoGameSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    name: config.game.name,
+    description: `${config.game.name} is a 5-reel, ${config.game.paylines}-payline online slot by ${config.game.developer}. RTP ${config.game.rtp}%, ${config.game.volatility.toLowerCase()} volatility, expanding Wild re-spins, max win ${config.game.maxWin}.`,
+    gamePlatform: "Browser",
+    playMode: "SinglePlayer",
+    publisher: {
+      "@type": "Organization",
+      name: config.game.developer,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: String(config.game.rating),
+      bestRating: String(config.game.ratingMax),
+      ratingCount: "1",
+    },
   };
 }

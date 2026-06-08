@@ -12,6 +12,7 @@ import {
   buildBreadcrumbs,
   buildFAQSchema,
   buildCasinoListSchema,
+  buildVideoGameSchema,
 } from "../components/seo/SchemaBuilder";
 
 export async function getStaticPaths() {
@@ -49,13 +50,19 @@ const pageNames: Record<string, string> = {
 };
 const pageName = pageNames[entry.slug] ?? entry.slug;
 
+const GAME_CONTENT_SLUGS = new Set(["review", "features", "rtp-volatility"]);
+
 const schemas: object[] = [
-  buildArticleSchema(title, publishedDate, lastUpdated, `${config.seo.siteUrl}/${entry.slug}/`, ogImage),
+  buildArticleSchema(title, publishedDate, lastUpdated, `${config.seo.siteUrl}/${entry.slug}/`, ogImage, description),
   buildBreadcrumbs([
     { name: "Home", path: "/" },
     { name: pageName, path: `/${entry.slug}/` },
   ]),
 ];
+
+if (GAME_CONTENT_SLUGS.has(entry.slug)) {
+  schemas.push(buildVideoGameSchema());
+}
 
 if (entry.slug === "casinos") {
   schemas.push(
