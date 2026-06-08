@@ -1,20 +1,27 @@
 User-agent: *
 Allow: /
 
-# Block AI training crawlers (does not affect Google Search or AI Overviews)
+# Allow AI search crawlers for GEO / AI Overviews visibility
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
+# Block pure training/scraping bots with no search benefit
 User-agent: Bytespider
 Disallow: /
 
 User-agent: CCBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: meta-externalagent
 Disallow: /
 
 Sitemap: https://starburstslots.co.za/sitemap-index.xml
