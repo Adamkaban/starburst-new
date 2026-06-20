@@ -273,7 +273,7 @@ For South African players, 1win is our top pick for Starburst in 2026:
 
 ## Is Starburst Legit? Is It Safe to Play?
 
-Yes. Starburst is among the most thoroughly audited slot games in existence. NetEnt is regulated by the Malta Gaming Authority and the UK Gambling Commission, and their RNG has been independently verified by organisations like eCOGRA and iTech Labs over billions of real spins.
+Yes. Starburst is among the most thoroughly audited slot games in existence. NetEnt is regulated by the Malta Gaming Authority and the UK Gambling Commission, and their RNG has been independently verified by organisations like [eCOGRA](https://ecogra.org/) and [iTech Labs](https://www.itechlabs.com/) over billions of real spins.
 
 For South African players: the regulation of online gambling in SA is still developing, which means your protection comes primarily from the **casino's licence**, not the game's country of origin. Play at licensed, reputable operators. The game itself is completely fair.
 

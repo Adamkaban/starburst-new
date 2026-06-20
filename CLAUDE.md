@@ -64,6 +64,10 @@ TYPE 3 — Unique pages (fully custom .astro)
 - HTML tag: <html lang="en"> — English only, no hreflang needed
 - hreflang: NOT required — single language (en), single geo (ZA)
 - Canonical: always https://starburstslots.co.za/[slug]/ — https, non-www, trailing slash
+- Trailing slash enforcement: TWO parts work together:
+  1. astro.config.mjs → trailingSlash: "always" (builds dist/page/index.html)
+  2. public/_redirects → 301 /page → /page/ (CF Pages does NOT auto-redirect)
+  Removing either part = duplicate content or broken URLs.
 - www/http→https: Cloudflare Pages handles https automatically
   www→non-www: set canonical domain in CF Dashboard (one-time setup)
 - robots default: index, follow | exceptions: privacy-policy, terms-of-use → noindex

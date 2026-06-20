@@ -166,7 +166,7 @@ Low. Starburst produces winning combinations frequently — roughly one in every
 It sits above the industry average. Starburst XXXtreme runs at 96.26% and is worth checking if you want higher volatility from the same franchise. The broader market average hovers around 96%, so the original Starburst holds its ground comfortably.
 
 **Is Starburst a fair game?**
-Yes. The RNG is independently certified by iTech Labs, GLI, and eCOGRA. Each spin is random and completely independent of the one before it.
+Yes. The RNG is independently certified by [iTech Labs](https://www.itechlabs.com/), [GLI](https://gaminglabs.com/) and [eCOGRA](https://ecogra.org/). Each spin is random and completely independent of the one before it.
 
 **Why does Starburst pay often but never seem to pay big?**
 That's low volatility doing exactly what it's designed to do. The maths distributes wins frequently across many spins rather than concentrating payouts into rare large events. If bigger individual wins are what you're after, Starburst XXXtreme is the high-volatility version — just be ready for longer dry stretches between them.

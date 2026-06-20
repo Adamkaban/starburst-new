@@ -47,7 +47,7 @@ A few things to check before you deposit a single rand:
 Any casino worth playing at will display its licensing information clearly in the footer. Licences from the Malta Gaming Authority (MGA), the UK Gambling Commission (UKGC), Curaçao eGaming, or the Gibraltar Regulatory Authority are the most widely trusted. If a casino buries its licence details or you can't verify the licence number directly on the regulator's own website — close the tab.
 
 **2. Check independent reviews and player forums**
-AskGamblers and Trustpilot aggregate real player complaints. What you're looking for, specifically, are unresolved withdrawal complaints. One complaint means little. A pattern of "account closed after a big win" stories is a very different matter.
+[AskGamblers](https://www.askgamblers.com/) and [Trustpilot](https://www.trustpilot.com/) aggregate real player complaints. What you're looking for, specifically, are unresolved withdrawal complaints. One complaint means little. A pattern of "account closed after a big win" stories is a very different matter.
 
 **3. Test their support before you deposit**
 Send a quick message to live chat before you register. How fast do they respond? Do they actually answer your question or just paste back a generic reply? A responsive, knowledgeable support team is one of the clearest signs you're dealing with a professional operation.
@@ -205,7 +205,7 @@ Not in the traditional sense. Instead of a free spins bonus round, Starburst use
 The default is 96.09%, slightly above the industry average. Some operators run it at a lower setting — as low as 90.05% — so checking the in-game paytable at your chosen casino before playing is always a sensible idea. The [full RTP guide](/rtp-volatility/) explains what that difference means across real sessions.
 
 **How do I know if a casino is paying out fairly?**
-Legitimate casinos use certified Random Number Generators audited by independent bodies like eCOGRA or iTech Labs. Look for those certification logos in the casino footer. AskGamblers and Trustpilot are also useful for identifying withdrawal complaint patterns — a couple of complaints is normal; a consistent pattern is not.
+Legitimate casinos use certified Random Number Generators audited by independent bodies like [eCOGRA](https://ecogra.org/) or [iTech Labs](https://www.itechlabs.com/). Look for those certification logos in the casino footer. [AskGamblers](https://www.askgamblers.com/) and [Trustpilot](https://www.trustpilot.com/) are also useful for identifying withdrawal complaint patterns — a couple of complaints is normal; a consistent pattern is not.
 
 ---
 

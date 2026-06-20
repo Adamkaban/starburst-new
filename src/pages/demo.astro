@@ -61,29 +61,73 @@ const schema = [
     <!-- Demo Embed -->
     <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
       <div class="container" style="max-width: 900px; margin-inline: auto;">
-        <div
-          style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;"
-        >
-          <div style="text-align: center; padding: var(--spacing-2xl);">
-            <p style="font-size: 1.125rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--spacing-md);">
-              Starburst Demo
-            </p>
-            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: var(--spacing-xl);">
-              Launch the free demo at a licensed NetEnt casino — no registration required.
-            </p>
-            <a
-              href={AFFILIATE_URL}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              style="background-color: var(--color-cta); color: #0f0f13; font-weight: 700; padding: 0.75rem 2rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
-            >
-              Open Free Demo
-            </a>
-          </div>
+        {/* Desktop iframe */}
+        <div class="hidden md:block" style="width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden;">
+          <iframe
+            src="https://playin.com/embed/v1/demo/starburstgar96f1"
+            frameborder="0"
+            width="100%"
+            height="100%"
+            title="Starburst Slot Free Demo"
+            allow="fullscreen"
+            loading="lazy"
+            style="display: block;"
+          ></iframe>
         </div>
+
+        {/* Mobile iframe */}
+        <div class="block md:hidden" style="max-width: 328px; margin-inline: auto; border-radius: var(--radius-md); overflow: hidden;">
+          <iframe
+            src="https://playin.com/embed/v1/demo/starburstgar96f1?device=mobile"
+            frameborder="0"
+            width="328"
+            height="461"
+            title="Starburst Slot Free Demo"
+            allow="fullscreen"
+            loading="lazy"
+            style="display: block; max-width: 100%;"
+          ></iframe>
+        </div>
+
         <p style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-top: var(--spacing-sm);">
           Demo uses virtual credits. No real money. Switch to real-money play at the casino.
         </p>
+
+        <div style="text-align: center; margin-top: var(--spacing-lg);">
+          <a
+            href={AFFILIATE_URL}
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="background-color: var(--color-cta); color: #0f0f13; font-weight: 700; padding: 0.75rem 2rem; border-radius: var(--radius-full); text-decoration: none; display: inline-block;"
+          >
+            Play for Real Money at 1win
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casino Demo vs Free Play -->
+    <section style="padding-block: var(--spacing-2xl); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Starburst Casino Demo vs Free Play at Home — What's Different</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8;">
+          <p>
+            The Starburst casino demo embedded above is the same game you'd launch inside an online casino lobby
+            — identical mechanics, identical RTP display, identical graphics. The only difference is where it runs.
+            At a casino you need an account to reach the demo mode; here you don't.
+          </p>
+          <p>
+            Some SA players search for a "Starburst casino demo" expecting a different, casino-specific version.
+            There isn't one. NetEnt distributes a single build to all operators. The demo widget on this page
+            uses the same certified game file. No download, no registration — it runs directly in your browser,
+            on desktop or mobile, the same way it would inside a casino lobby.
+          </p>
+          <p>
+            One practical difference: at a casino, switching from demo to real money takes one click.
+            Here it takes a click to an operator. Either way, the mechanics you practised are exactly
+            what you'll encounter when ZAR is on the line.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -214,7 +258,7 @@ const schema = [
           </table>
         </div>
         <p style="margin-top: var(--spacing-lg); color: var(--color-text-muted); line-height: 1.8;">
-          The demo is the full game minus real money. Every mechanic, every mathematical model, every animation — identical. What's missing: actual payouts and casino-specific extras that come with a real account.
+          The demo is the full game minus real money. Every mechanic, every mathematical model, every animation — identical. What's missing: actual payouts and casino-specific extras that come with a real account. When you're ready to make the switch, see our guide to <a href="/bonuses/" style="color: var(--color-accent);">Starburst bonus offers for SA players</a>.
         </p>
       </div>
     </section>
@@ -267,7 +311,7 @@ const schema = [
       <div class="container" style="max-width: var(--content-max); margin-inline: auto;">
         <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-xl); color: var(--color-text);">Tips for Getting the Most Out of the Demo</h2>
         <div style="display: flex; flex-direction: column; gap: var(--spacing-md); color: var(--color-text-muted); line-height: 1.8;">
-          <p><strong style="color: var(--color-text);">Match your demo bet to your real-money bet.</strong> If you plan to play at R18 per spin, set the demo to R18. A game that feels comfortable at R1.80 will feel very different at ten times the stake. Practice at realistic bet levels — otherwise your read on the game's volatility is essentially useless.</p>
+          <p><strong style="color: var(--color-text);">Match your demo bet to your real-money bet.</strong> If you plan to play at R18 per spin, set the demo to R18. A game that feels comfortable at R1.80 will feel very different at ten times the stake. Practice at realistic bet levels — otherwise your read on the game's volatility is essentially useless. For a full framework on bet sizing and session planning, read our <a href="/strategy/" style="color: var(--color-accent);">Starburst strategy guide</a>.</p>
           <p><strong style="color: var(--color-text);">Play at least 150 spins before drawing conclusions.</strong> Twenty or thirty spins tell you almost nothing. The RNG needs room to express its mathematical model. 150–200 spins is enough to see the re-spin feature trigger naturally, multiple times, and get a realistic read on win frequency.</p>
           <p><strong style="color: var(--color-text);">Use Autoplay, but step back while it runs.</strong> Set it to 100 spins and just watch. Removing yourself from decision-making strips away the impulse to stop early after a win. Cleaner data, better conclusions.</p>
           <p><strong style="color: var(--color-text);">Pay attention to re-spin chains.</strong> Notice how often the Starburst Wild appears — and whether you see two or three consecutive re-spins. Those chains are the primary source of meaningful wins. Understanding how rarely they appear calibrates your expectations for real-money play.</p>
