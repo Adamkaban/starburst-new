@@ -4,6 +4,8 @@ import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import config from "./site.config";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   output: "static",
   site:   config.seo.siteUrl,
@@ -26,4 +28,6 @@ export default defineConfig({
     }),
     mdx(),
   ],
+
+  adapter: cloudflare()
 });
